@@ -1,0 +1,7 @@
+# robots.txt for safe4seniors.ai
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://safe4seniors.ai/sitemap.xml

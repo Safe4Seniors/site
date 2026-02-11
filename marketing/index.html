@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe4Seniors™ | AI-Powered Aging-in-Place Companion</title>
+    <meta name="description" content="Helping rural seniors stay independent, safe, and connected through AI-powered daily wellness check-ins. Dual-pilot serving Lewiston-Clarkston Valley and Wood River Valley.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://safe4seniors.ai/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe4seniors.ai/">
+    <meta property="og:title" content="Safe4Seniors™ | AI-Powered Aging-in-Place Companion">
+    <meta property="og:description" content="Voice-first AI companion conducting daily wellness check-ins with seniors. Evidence-based home safety guidance. Early intervention before crisis.">
+    <meta property="og:image" content="https://safe4seniors.ai/og-image.png">
+    <meta property="og:site_name" content="Safe4Seniors">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://safe4seniors.ai/">
+    <meta name="twitter:title" content="Safe4Seniors™ | AI-Powered Aging-in-Place Companion">
+    <meta name="twitter:description" content="Voice-first AI companion conducting daily wellness check-ins with seniors. Early intervention before crisis.">
+    <meta name="twitter:image" content="https://safe4seniors.ai/og-image.png">
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="senior care, aging in place, elderly care, AI companion, wellness check-in, fall prevention, Idaho, rural healthcare, AARP HomeFit">
+    <meta name="author" content="Safe4Seniors">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1e3a5f',
+                        'brand-blue-light': '#2c5282',
+                        'brand-green': '#38a169',
+                        'brand-green-dark': '#276749',
+                        'brand-gold': '#d69e2e',
+                        'brand-gold-dark': '#b7791f',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-up-delay-1 { transition-delay: 0.1s; }
+        .fade-up-delay-2 { transition-delay: 0.2s; }
+        .fade-up-delay-3 { transition-delay: 0.3s; }
+
+        /* Gradient backgrounds */
+        .gradient-hero {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #1e3a5f 100%);
+        }
+        .gradient-cta {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+        }
+
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Button transitions */
+        .btn-primary {
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 95, 0.3);
+        }
+
+        /* Nav link underline animation */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #1e3a5f;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Mobile menu animation */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .mobile-menu.open {
+            max-height: 400px;
+        }
+
+        /* Stat counter glow */
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: scale(1.03);
+        }
+
+        /* Table row hover */
+        tbody tr {
+            transition: background-color 0.2s ease;
+        }
+        tbody tr:hover {
+            background-color: #f0fdf4 !important;
+        }
+
+        /* Checkmark styling */
+        .check-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        /* Scroll-collapsing logo */
+        .logo-container {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-full {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .logo-full.hidden-logo {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .logo-collapsed {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            position: absolute;
+        }
+
+        .logo-collapsed.visible-logo {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+        }
+
+        /* Header shadow on scroll */
+        nav.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile: always show collapsed */
+        @media (max-width: 640px) {
+            .logo-full {
+                display: none !important;
+            }
+            .logo-collapsed {
+                opacity: 1 !important;
+                transform: scale(1) !important;
+                position: relative !important;
+            }
+            .nvidia-badge-header {
+                display: none !important;
+            }
+        }
+
+        /* NVIDIA Inception Badge */
+        .nvidia-badge-header {
+            opacity: 1;
+            transition: opacity 0.25s ease;
+        }
+
+        nav.scrolled .nvidia-badge-header {
+            opacity: 0;
+            pointer-events: none;
+        }
+    </style>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Safe4Seniors",
+        "alternateName": "Safe4Seniors™",
+        "url": "https://safe4seniors.ai",
+        "logo": "https://safe4seniors.ai/favicon.svg",
+        "description": "AI-powered aging-in-place companion providing daily wellness check-ins for seniors",
+        "foundingDate": "2026",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Jay Myers"
+            },
+            {
+                "@type": "Person",
+                "name": "Dr. Richard Stanley"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "Place",
+                "name": "Lewiston-Clarkston Valley, Idaho-Washington"
+            },
+            {
+                "@type": "Place",
+                "name": "Wood River Valley, Idaho"
+            }
+        ],
+        "serviceType": ["Senior Care", "Wellness Check-ins", "Fall Prevention", "Medication Reminders"],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "info@safe4seniors.ai",
+            "contactType": "customer service"
+        },
+        "sameAs": []
+    }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+    <!-- Navigation -->
+    <nav id="main-header" class="bg-white/95 backdrop-blur-sm shadow-sm fixed w-full z-50 transition-shadow duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center gap-6">
+                <!-- Logo Container with Swap Logic -->
+                <a href="#" class="logo-container relative flex items-center">
+
+                    <!-- Full Wordmark (visible by default on desktop) -->
+                    <div class="logo-full hidden sm:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-14 w-auto">
+                            <line x1="10" y1="12" x2="60" y2="12" stroke="#D4A853" stroke-width="3" stroke-linecap="round"/>
+                            <text x="10" y="45" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold">
+                                <tspan fill="#1E293B">Safe</tspan><tspan fill="#0D9488">4</tspan><tspan fill="#1E293B">Seniors</tspan>
+                            </text>
+                            <line x1="10" y1="52" x2="220" y2="52" stroke="#D4A853" stroke-width="2"/>
+                            <text x="10" y="72" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" letter-spacing="2">
+                                AI VOICE COMPANIONS
+                            </text>
+                            <line x1="260" y1="52" x2="310" y2="52" stroke="#D4A853" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- Collapsed Mark (shows on scroll or mobile) -->
+                    <div class="logo-collapsed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 40" class="h-10 w-auto">
+                            <rect x="2" y="2" width="86" height="36" rx="4" ry="4"
+                                  fill="none" stroke="#D4A853" stroke-width="2.5"/>
+                            <text x="45" y="28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" text-anchor="middle">
+                                <tspan fill="#1E293B">Safe</tspan><tspan fill="#0D9488">4</tspan>
+                            </text>
+                        </svg>
+                    </div>
+
+                </a>
+
+                <!-- NVIDIA Inception Badge (desktop only, hidden on scroll) -->
+                <a href="https://www.nvidia.com/en-us/startups/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="nvidia-badge-header hidden sm:block ml-6"
+                   aria-label="NVIDIA Inception Member">
+                    <img src="./assets/nvidia-inception-badge.png"
+                         alt="NVIDIA Inception Member"
+                         class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
+                </a>
+
+                <!-- Spacer to push nav to the right -->
+                <div class="flex-1"></div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solution" class="nav-link text-gray-600 hover:text-brand-blue font-medium">Solution</a>
+                    <a href="#pilot" class="nav-link text-gray-600 hover:text-brand-blue font-medium">Dual-Pilot</a>
+                    <a href="#business" class="nav-link text-gray-600 hover:text-brand-blue font-medium">Business Model</a>
+                    <a href="#partners" class="nav-link text-gray-600 hover:text-brand-blue font-medium">Partners</a>
+                    <a href="#team" class="nav-link text-gray-600 hover:text-brand-blue font-medium">Team</a>
+                    <a href="#contact" class="btn-primary bg-brand-blue text-white px-5 py-2.5 rounded-lg font-semibold hover:bg-brand-blue-light">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle menu">
+                    <svg id="menu-icon" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="pt-4 pb-2 space-y-2">
+                    <a href="#solution" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Solution</a>
+                    <a href="#pilot" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Dual-Pilot</a>
+                    <a href="#business" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Business Model</a>
+                    <a href="#partners" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Partners</a>
+                    <a href="#team" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Team</a>
+                    <a href="#contact" class="block px-4 py-3 bg-brand-blue text-white rounded-lg font-semibold text-center mt-2">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-hero text-white pt-28 pb-20 px-4 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-white blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-5 tracking-tight">
+                Safe<span class="text-brand-gold">4</span>Seniors<sup class="text-2xl md:text-3xl">™</sup>
+            </h1>
+            <p class="text-xl md:text-2xl text-blue-100 mb-3 font-medium">Preserving Independence, Preventing Crises</p>
+            <p class="text-lg text-blue-200 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Voice-first AI companion conducting daily wellness check-ins with seniors.
+                Evidence-based home safety guidance. Early intervention before crisis.
+            </p>
+
+            <a href="#contact" class="btn-primary inline-block bg-brand-gold text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-gold-dark mb-16">
+                Partner With Us
+            </a>
+
+            <!-- Key Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-4xl mx-auto">
+                <div class="stat-card rounded-xl p-5">
+                    <div class="text-3xl md:text-4xl font-bold">13,200+</div>
+                    <div class="text-sm text-blue-200 mt-1">Target Seniors</div>
+                </div>
+                <div class="stat-card rounded-xl p-5">
+                    <div class="text-3xl md:text-4xl font-bold">2</div>
+                    <div class="text-sm text-blue-200 mt-1">Pilot Markets</div>
+                </div>
+                <div class="stat-card rounded-xl p-5">
+                    <div class="text-3xl md:text-4xl font-bold">2</div>
+                    <div class="text-sm text-blue-200 mt-1">States</div>
+                </div>
+                <div class="stat-card rounded-xl p-5">
+                    <div class="text-3xl md:text-4xl font-bold">$30-60</div>
+                    <div class="text-sm text-blue-200 mt-1">PMPM Revenue</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dual-Pilot Advantage Banner -->
+    <section class="bg-gradient-to-r from-brand-gold-dark to-brand-gold text-white py-4 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <p class="font-medium text-sm md:text-base">
+                Validating across economic segments:
+                <span class="font-bold">Working-class Lewiston-Clarkston</span> +
+                <span class="font-bold">Affluent Wood River Valley</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Problem & Solution Section -->
+    <section id="solution" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 fade-up">
+                    The Solution That Works Across All Divides
+                </h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg fade-up fade-up-delay-1">
+                    An AI companion that connects seniors to resources, provides evidence-based safety guidance
+                    (AARP HomeFit Guide), monitors for risk signals, and alerts care teams for early intervention.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- The Problem -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 border-l-4 border-red-500 card-hover fade-up fade-up-delay-1">
+                    <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">The Problem</h3>
+                    <p class="text-3xl font-bold text-red-600 mb-1">36M</p>
+                    <p class="text-gray-600 mb-3">falls per year in the US</p>
+                    <p class="text-2xl font-bold text-gray-700 mb-3">$50B in costs</p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Current systems are reactive - responding to crises after they happen.
+                        We detect risk <em>before</em> hospitalization becomes necessary.
+                    </p>
+                </div>
+
+                <!-- What We Do -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 border-l-4 border-brand-green card-hover fade-up fade-up-delay-2">
+                    <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">What We Do</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-green-100 text-brand-green mt-0.5">&#10003;</span>
+                            <span>Daily check-in calls (voice-first, phone-based)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-green-100 text-brand-green mt-0.5">&#10003;</span>
+                            <span>AARP HomeFit home safety recommendations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-green-100 text-brand-green mt-0.5">&#10003;</span>
+                            <span>Medication reminders & appointment coordination</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-green-100 text-brand-green mt-0.5">&#10003;</span>
+                            <span>Local resource connections</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-green-100 text-brand-green mt-0.5">&#10003;</span>
+                            <span>Silent risk monitoring & early alerts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Why Now -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 border-l-4 border-brand-blue card-hover fade-up fade-up-delay-3">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-6 h-6 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Why Now</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-blue-100 text-brand-blue mt-0.5">&#10003;</span>
+                            <span>10,000 Americans turn 65 daily through 2030</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-blue-100 text-brand-blue mt-0.5">&#10003;</span>
+                            <span>$44B annual preventable readmissions</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-blue-100 text-brand-blue mt-0.5">&#10003;</span>
+                            <span>CMS mandating HCBS expansion</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-blue-100 text-brand-blue mt-0.5">&#10003;</span>
+                            <span>AI technology matured for natural conversation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="check-icon bg-blue-100 text-brand-blue mt-0.5">&#10003;</span>
+                            <span>Rural markets underserved</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Ready Section -->
+    <section class="py-12 px-4 bg-gradient-to-r from-brand-blue to-brand-blue-light text-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-8">
+                <span class="inline-block bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3">Platform Ready</span>
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Core Technology Already Built</h2>
+                <p class="text-blue-200 mb-3">Unlike typical pre-seed startups, we have a working voice agent deployed</p>
+                <div class="flex flex-wrap justify-center gap-3 text-sm">
+                    <span class="bg-white/20 px-4 py-2 rounded-full font-semibold">Cloudflare Bootstrap Funding</span>
+                    <span class="bg-white/20 px-4 py-2 rounded-full font-semibold">Workers Launchpad Accelerator Invite</span>
+                    <span class="bg-green-500/30 px-4 py-2 rounded-full font-semibold border border-green-400/50">NVIDIA Inception Member</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center text-sm">
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">Live</div>
+                    <div class="text-blue-100">Voice Interface</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">88</div>
+                    <div class="text-blue-100">HomeFit Tips</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">5</div>
+                    <div class="text-blue-100">Health Metrics</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">911</div>
+                    <div class="text-blue-100">Emergency Transfer</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">D1</div>
+                    <div class="text-blue-100">Database Ready</div>
+                </div>
+                <div class="bg-white/10 rounded-lg p-4">
+                    <div class="text-brand-gold font-bold text-lg mb-1">2 States</div>
+                    <div class="text-blue-100">ID + WA Support</div>
+                </div>
+            </div>
+            <p class="text-center text-blue-200 mt-6 text-sm">
+                <strong class="text-white">What we need now:</strong> Agency partnerships to validate with real seniors
+            </p>
+        </div>
+    </section>
+
+    <!-- Dual-Pilot Section -->
+    <section id="pilot" class="bg-gray-100 py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 fade-up">Dual-Pilot Strategy</h2>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg fade-up fade-up-delay-1">
+                    Validating across every dimension: political, economic, payor mix, and healthcare access.
+                    <strong>If it works across these divides, it works anywhere in America.</strong>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Lewiston-Clarkston -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-up fade-up-delay-1">
+                    <div class="bg-brand-blue text-white p-5">
+                        <h3 class="text-xl font-bold">Lewiston-Clarkston Valley</h3>
+                        <p class="text-blue-200 text-sm mt-1">Idaho-Washington Border</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-brand-blue">7,920</div>
+                                <div class="text-xs text-gray-500 mt-1">Seniors 65+</div>
+                            </div>
+                            <div class="bg-blue-50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-brand-blue">19.9%</div>
+                                <div class="text-xs text-gray-500 mt-1">Senior Population</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-gray-600 text-sm">
+                            <li><span class="font-semibold text-gray-800">Economic:</span> Working-class, healthcare-dependent</li>
+                            <li><span class="font-semibold text-gray-800">Payor Mix:</span> Medicaid HCBS, Traditional Medicare</li>
+                            <li><span class="font-semibold text-gray-800">Political:</span> Idaho (R) + Washington (D)</li>
+                            <li><span class="font-semibold text-gray-800">Healthcare:</span> 98% provider shortage area</li>
+                            <li><span class="font-semibold text-gray-800">Pricing:</span> <span class="text-brand-green font-bold">$30-40 PMPM</span></li>
+                        </ul>
+                        <div class="mt-5 pt-5 border-t border-gray-100">
+                            <p class="text-xs text-gray-500">
+                                <span class="font-semibold">Seeking Partners:</span> AAA Region II, St. Joseph Hospital, Nimiipuu Health, Tri-State Hospital
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wood River Valley -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-up fade-up-delay-2">
+                    <div class="bg-brand-gold text-white p-5">
+                        <h3 class="text-xl font-bold">Wood River Valley</h3>
+                        <p class="text-yellow-100 text-sm mt-1">Blaine County, Idaho (Sun Valley)</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-yellow-50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-brand-gold">5,300+</div>
+                                <div class="text-xs text-gray-500 mt-1">Seniors 65+</div>
+                            </div>
+                            <div class="bg-yellow-50 rounded-xl p-4 text-center">
+                                <div class="text-2xl font-bold text-brand-gold">22-34%</div>
+                                <div class="text-xs text-gray-500 mt-1">Senior Population</div>
+                            </div>
+                        </div>
+                        <ul class="space-y-2.5 text-gray-600 text-sm">
+                            <li><span class="font-semibold text-gray-800">Economic:</span> Affluent retirees, resort community</li>
+                            <li><span class="font-semibold text-gray-800">Payor Mix:</span> Medicare Advantage, Private Pay</li>
+                            <li><span class="font-semibold text-gray-800">Political:</span> Idaho (R)</li>
+                            <li><span class="font-semibold text-gray-800">Healthcare:</span> St. Luke's destination healthcare</li>
+                            <li><span class="font-semibold text-gray-800">Pricing:</span> <span class="text-brand-gold font-bold">$50-75 PMPM</span></li>
+                        </ul>
+                        <div class="mt-5 pt-5 border-t border-gray-100">
+                            <p class="text-xs text-gray-500">
+                                <span class="font-semibold">Seeking Partners:</span> AAA Region IV, St. Luke's Wood River, Senior Connection, Blaine County EMS
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Table -->
+            <div class="mt-10 bg-white rounded-2xl shadow-lg overflow-hidden fade-up">
+                <div class="bg-brand-blue text-white p-5">
+                    <h3 class="text-lg font-bold">Four Validation Axes</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Dimension</th>
+                                <th class="px-6 py-4 text-left font-semibold text-brand-blue">Lewiston-Clarkston</th>
+                                <th class="px-6 py-4 text-left font-semibold text-brand-gold">Wood River Valley</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Political</td>
+                                <td class="px-6 py-4 text-gray-600">Idaho (R) + Washington (D)</td>
+                                <td class="px-6 py-4 text-gray-600">Idaho (R)</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Economic</td>
+                                <td class="px-6 py-4 text-gray-600">Working class</td>
+                                <td class="px-6 py-4 text-gray-600">Affluent retirees</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Payor Mix</td>
+                                <td class="px-6 py-4 text-gray-600">Medicaid, Traditional Medicare</td>
+                                <td class="px-6 py-4 text-gray-600">Medicare Advantage, Private Pay</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Healthcare</td>
+                                <td class="px-6 py-4 text-gray-600">98% shortage area</td>
+                                <td class="px-6 py-4 text-gray-600">Destination healthcare</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Model Section -->
+    <section id="business" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 fade-up">Business Model</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg fade-up fade-up-delay-1">
+                    Multi-payor revenue model with 73% contribution margin at scale
+                </p>
+            </div>
+
+            <!-- PMPM Pricing -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 fade-up">
+                <div class="bg-brand-blue text-white p-5 flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                    <h3 class="text-lg font-bold">Per-Member-Per-Month (PMPM) Pricing</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Customer Segment</th>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">PMPM</th>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Why They Pay</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Medicaid HCBS Waiver</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-brand-green px-3 py-1 rounded-full font-bold">$30-40</span></td>
+                                <td class="px-6 py-4 text-gray-600">Saves $200-500/month in avoided institutional care</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Medicare Advantage Plans</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-brand-green px-3 py-1 rounded-full font-bold">$45-60</span></td>
+                                <td class="px-6 py-4 text-gray-600">Reduces readmissions (Star Ratings), ER utilization</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">ACOs / Health Systems</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-brand-green px-3 py-1 rounded-full font-bold">$40-55</span></td>
+                                <td class="px-6 py-4 text-gray-600">Population health management, bundled payment optimization</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 font-medium text-gray-800">Senior Living Communities</td>
+                                <td class="px-6 py-4"><span class="bg-green-100 text-brand-green px-3 py-1 rounded-full font-bold">$50-75</span></td>
+                                <td class="px-6 py-4 text-gray-600">Retention tool (delays skilled nursing transitions)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Medicare Billing Codes -->
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-8 fade-up fade-up-delay-1">
+                <div class="bg-brand-green text-white p-5 flex items-center gap-3">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                    </svg>
+                    <div>
+                        <h3 class="text-lg font-bold">Medicare Billing Codes</h3>
+                        <p class="text-green-100 text-sm">Healthcare partners bill Medicare directly using Safe4Seniors documentation</p>
+                    </div>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50 border-b">
+                            <tr>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Code</th>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Name</th>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Rate</th>
+                                <th class="px-6 py-4 text-left font-semibold text-gray-700">Requirements</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-100">
+                            <tr>
+                                <td class="px-6 py-4"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm font-bold">CCM</code></td>
+                                <td class="px-6 py-4 text-gray-600">Chronic Care Management</td>
+                                <td class="px-6 py-4"><span class="text-brand-green font-bold">~$62/mo</span></td>
+                                <td class="px-6 py-4 text-gray-600">2+ chronic conditions, 20+ min/month</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm font-bold">RPM</code></td>
+                                <td class="px-6 py-4 text-gray-600">Remote Patient Monitoring</td>
+                                <td class="px-6 py-4"><span class="text-brand-green font-bold">~$120/mo</span></td>
+                                <td class="px-6 py-4 text-gray-600">16+ days data collection</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm font-bold">PCM</code></td>
+                                <td class="px-6 py-4 text-gray-600">Principal Care Management</td>
+                                <td class="px-6 py-4"><span class="text-brand-green font-bold">~$62-83/mo</span></td>
+                                <td class="px-6 py-4 text-gray-600">ONE serious condition, 30+ min/month</td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4"><code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm font-bold">TCM</code></td>
+                                <td class="px-6 py-4 text-gray-600">Transitional Care Management</td>
+                                <td class="px-6 py-4"><span class="text-brand-green font-bold">~$168-239</span></td>
+                                <td class="px-6 py-4 text-gray-600">Contact within 2 days of discharge</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-5 bg-gradient-to-r from-blue-50 to-green-50 border-t">
+                    <p class="text-sm text-gray-700">
+                        <span class="font-bold text-brand-blue">Example:</span> A hospital with 100 CCM patients generates
+                        <span class="font-bold text-brand-green">$74,400/year</span> in Medicare reimbursement using our documentation,
+                        while paying us $54,000/year. <span class="font-bold">Net partner gain: $20,400/year + reduced penalties.</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Financial Projections -->
+            <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+                <div class="bg-white rounded-2xl shadow-lg p-7 card-hover fade-up fade-up-delay-2">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Revenue Projections</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+                            <span class="text-gray-600">Year 1 (Dual-Pilot)</span>
+                            <span class="font-bold text-gray-400">$0 (grant-funded)</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+                            <span class="text-gray-600">Year 2 (First Revenue)</span>
+                            <span class="font-bold text-brand-green text-lg">$456K</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100">
+                            <span class="text-gray-600">Year 3 (Dual-State)</span>
+                            <span class="font-bold text-brand-green text-lg">$4.92M</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600">Year 4-5 (National)</span>
+                            <span class="font-bold text-brand-green text-lg">$27M-54M</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg p-7 card-hover fade-up fade-up-delay-3">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center">
+                            <svg class="w-5 h-5 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-blue">Unit Economics</h3>
+                    </div>
+                    <!-- Service Tier Costs -->
+                    <div class="mb-4 p-3 bg-gray-50 rounded-lg">
+                        <p class="text-xs font-semibold text-gray-500 uppercase mb-2">Cost by Service Tier</p>
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs">
+                            <div>
+                                <div class="font-bold text-gray-700">$5-8</div>
+                                <div class="text-gray-500">Low-Touch</div>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-700">$12-16</div>
+                                <div class="text-gray-500">Medium</div>
+                            </div>
+                            <div>
+                                <div class="font-bold text-gray-700">$20-28</div>
+                                <div class="text-gray-500">High-Touch</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600 text-sm">PMPM Revenue</span>
+                            <span class="font-bold">$45</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600 text-sm">Blended Cost*</span>
+                            <span class="font-bold">$12-15</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-2 border-b border-gray-100">
+                            <span class="text-gray-600 text-sm">Contribution Margin</span>
+                            <span class="font-bold text-brand-green text-lg">67-73%</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-gray-600 text-sm">LTV:CAC Ratio</span>
+                            <span class="font-bold text-brand-green text-lg">15-18:1</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-3">*Blended assumes 55% low / 30% med / 15% high-touch mix. Twilio volume pricing critical for high-touch tier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="bg-gray-100 py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 fade-up">Join Us in Transforming Senior Care</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg fade-up fade-up-delay-1">
+                    We're seeking partners who share our vision of dignified, independent aging for all seniors.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Grant Funders -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 card-hover fade-up fade-up-delay-1">
+                    <div class="w-14 h-14 bg-gradient-to-br from-yellow-100 to-yellow-200 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-brand-gold" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">For Grant Funders</h3>
+                    <p class="text-gray-600 mb-5">Support a proven dual-pilot model addressing the national aging crisis.</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-5">
+                        <li><span class="font-semibold text-gray-800">Seeking:</span> $40K-$245K</li>
+                        <li><span class="font-semibold text-gray-800">Use:</span> 150-250 senior pilot, outcomes study</li>
+                        <li><span class="font-semibold text-gray-800">Impact:</span> Scalable model for rural America</li>
+                    </ul>
+                    <p class="text-xs text-gray-400">Applications: AARP, ACL, M.J. Murdock Charitable Trust</p>
+                </div>
+
+                <!-- Investors -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 card-hover fade-up fade-up-delay-2">
+                    <div class="w-14 h-14 bg-gradient-to-br from-green-100 to-green-200 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-brand-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">For Investors</h3>
+                    <p class="text-gray-600 mb-5">Capitalize on the $50B aging market with multi-segment proof-of-concept.</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-5">
+                        <li><span class="font-semibold text-gray-800">Seeking:</span> $250K Pre-Seed</li>
+                        <li><span class="font-semibold text-gray-800">Milestones:</span> First contract Month 12, Seed Round Month 18-24</li>
+                        <li><span class="font-semibold text-gray-800">Return:</span> 10-20x in 5-7 years</li>
+                    </ul>
+                    <p class="text-xs text-gray-400">Market: 55M seniors today, 73M by 2030</p>
+                </div>
+
+                <!-- Agency Partners -->
+                <div class="bg-white rounded-2xl shadow-lg p-7 card-hover fade-up fade-up-delay-3">
+                    <div class="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl flex items-center justify-center mb-5">
+                        <svg class="w-7 h-7 text-brand-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">For Agency Partners</h3>
+                    <p class="text-gray-600 mb-5">Enhance your services with AI-powered early intervention - at no cost.</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-5">
+                        <li><span class="font-semibold text-gray-800">Offer:</span> Free 3-Month Pilot</li>
+                        <li><span class="font-semibold text-gray-800">You get:</span> Enhanced engagement, early alerts</li>
+                        <li><span class="font-semibold text-gray-800">Success:</span> 20-30% fewer acute events</li>
+                    </ul>
+                    <p class="text-xs text-gray-400">Ideal: AAAs, Medicare Advantage, home health</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-brand-blue mb-4 fade-up">Founding Team</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg fade-up fade-up-delay-1">
+                    Local trust + Global scale expertise
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Jay -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center card-hover fade-up fade-up-delay-1">
+                    <div class="w-28 h-28 bg-gradient-to-br from-brand-blue to-brand-blue-light rounded-full mx-auto mb-5 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                        JM
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Jay Myers</h3>
+                    <p class="text-brand-blue font-semibold mb-2">Community & Operations</p>
+                    <p class="text-sm text-gray-500 mb-4">Twin Falls / Clarkston / Wood River Valley</p>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                        15+ years serving Idaho-Washington seniors. <strong>Ties to Wood River Valley since 1997</strong> -
+                        established relationships in BOTH pilot markets. AI/ML expertise: RAG pipelines, Cloudflare, voice interfaces.
+                    </p>
+                    <a href="mailto:jay@safe4seniors.ai" class="inline-flex items-center gap-2 text-brand-blue hover:underline text-sm font-medium">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        jay@safe4seniors.ai
+                    </a>
+                </div>
+
+                <!-- Richard -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 text-center card-hover fade-up fade-up-delay-2">
+                    <div class="w-28 h-28 bg-gradient-to-br from-brand-blue to-brand-blue-light rounded-full mx-auto mb-5 flex items-center justify-center text-white text-4xl font-bold shadow-lg">
+                        RS
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800">Dr. Richard Stanley</h3>
+                    <p class="text-brand-blue font-semibold mb-2">Chief Technology Officer</p>
+                    <p class="text-sm text-gray-500 mb-4">Alexandria, VA (DC Metro)</p>
+                    <p class="text-sm text-gray-600 mb-5 leading-relaxed">
+                        15+ years WHO/CDC/UNICEF across 20+ countries. Health IT standards (FHIR, HIPAA).
+                        PhD Oxford. DC federal healthcare connections (CMS, ACL, IHS).
+                    </p>
+                    <a href="mailto:richard@safe4seniors.ai" class="inline-flex items-center gap-2 text-brand-blue hover:underline text-sm font-medium">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        richard@safe4seniors.ai
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-10 bg-gradient-to-r from-blue-50 to-green-50 rounded-2xl p-6 max-w-3xl mx-auto fade-up">
+                <p class="text-gray-700">
+                    <span class="font-bold text-brand-blue">Why This Team Works:</span> Local trust in BOTH pilot markets
+                    (Jay: 15yr LC Valley + Wood River since 1997) + Global scale expertise
+                    (Richard: 200M+ messages deployed) + Both technical founders + Distributed for national expansion
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="gradient-cta text-white py-20 px-4 relative overflow-hidden">
+        <!-- Background decoration -->
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 rounded-full bg-white blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 rounded-full bg-white blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-up">Ready to Transform Senior Care?</h2>
+            <p class="text-blue-200 mb-10 text-lg fade-up fade-up-delay-1">Let's discuss how Safe4Seniors can serve your community.</p>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-7 border border-white/20 fade-up fade-up-delay-1">
+                    <h3 class="text-xl font-bold mb-3">Schedule a Call</h3>
+                    <p class="text-blue-200 mb-5">30-minute intro to discuss partnership opportunities</p>
+                    <a href="mailto:info@safe4seniors.ai?subject=Partnership Inquiry"
+                       class="btn-primary inline-block bg-white text-brand-blue px-7 py-3.5 rounded-lg font-bold hover:bg-blue-50">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-7 border border-white/20 fade-up fade-up-delay-2">
+                    <h3 class="text-xl font-bold mb-3">Request Proposal</h3>
+                    <p class="text-blue-200 mb-5">Full investment or partnership proposal</p>
+                    <a href="mailto:info@safe4seniors.ai?subject=Proposal Request"
+                       class="btn-primary inline-block bg-brand-gold text-white px-7 py-3.5 rounded-lg font-bold hover:bg-brand-gold-dark">
+                        Get Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="font-bold text-white text-xl mb-1">Safe<span class="text-brand-green">4</span>Seniors<sup class="text-xs">™</sup></p>
+                    <p class="text-sm">Serving seniors across Idaho, Washington, and beyond</p>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#solution" class="hover:text-white transition">Solution</a>
+                    <a href="#pilot" class="hover:text-white transition">Dual-Pilot</a>
+                    <a href="#business" class="hover:text-white transition">Business</a>
+                    <a href="#contact" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+
+            <!-- NVIDIA Inception Badge -->
+            <div class="border-t border-gray-800 mt-8 pt-8 pb-2 text-center">
+                <p class="text-sm text-gray-500 mb-4">Proud Member Of</p>
+                <a href="https://www.nvidia.com/en-us/startups/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block hover:opacity-80 transition-opacity"
+                   aria-label="NVIDIA Inception Program Member">
+                    <img src="./assets/nvidia-inception-badge.png"
+                         alt="NVIDIA Inception Program Member"
+                         class="h-16 md:h-20 w-auto mx-auto">
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-xs">
+                <p>&copy; 2026 Safe4Seniors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        /**
+         * Opens mailto: links reliably across browsers.
+         * Falls back to window.open() if location.href fails (common in PWAs/webviews).
+         * @param {string} email - Email address
+         * @param {string} [subject] - Optional subject line
+         * @param {string} [body] - Optional body text
+         * @returns {boolean} - Whether the mailto was triggered
+         */
+        function openMailto(email, subject, body) {
+            let mailtoUrl = 'mailto:' + encodeURIComponent(email);
+            const params = [];
+            if (subject) params.push('subject=' + encodeURIComponent(subject));
+            if (body) params.push('body=' + encodeURIComponent(body));
+            if (params.length) mailtoUrl += '?' + params.join('&');
+
+            // Try location.href first (works in most browsers)
+            // Use a timeout to detect if it failed (no navigation = likely blocked)
+            const startTime = Date.now();
+            window.location.href = mailtoUrl;
+
+            // Fallback: if still on page after 500ms, try window.open
+            setTimeout(() => {
+                if (Date.now() - startTime < 1000 && document.hasFocus()) {
+                    window.open(mailtoUrl, '_blank');
+                }
+            }, 500);
+
+            return true;
+        }
+
+        // Enhance all mailto: links on the page
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="mailto:"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const href = link.getAttribute('href');
+                    const url = new URL(href);
+                    const email = url.pathname;
+                    const subject = url.searchParams.get('subject') || '';
+                    const body = url.searchParams.get('body') || '';
+                    openMailto(email, subject, body);
+                });
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll-collapsing logo
+        const header = document.getElementById('main-header');
+        const logoFull = document.querySelector('.logo-full');
+        const logoCollapsed = document.querySelector('.logo-collapsed');
+
+        let scrollThreshold = 50;
+        let isScrolled = false;
+
+        function handleScroll() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > scrollThreshold && !isScrolled) {
+                // Scrolled down - collapse logo
+                isScrolled = true;
+                header.classList.add('scrolled');
+                logoFull.classList.add('hidden-logo');
+                logoCollapsed.classList.add('visible-logo');
+            } else if (currentScroll <= scrollThreshold && isScrolled) {
+                // Scrolled to top - expand logo
+                isScrolled = false;
+                header.classList.remove('scrolled');
+                logoFull.classList.remove('hidden-logo');
+                logoCollapsed.classList.remove('visible-logo');
+            }
+        }
+
+        // Throttle scroll events for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Initialize state on load
+        handleScroll();
+    </script>
+</body>
+</html>
