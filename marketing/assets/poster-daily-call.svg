@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" width="640" height="360">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#2c5282"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#bg)"/>
+  <!-- Phone icon -->
+  <g transform="translate(280,100)">
+    <rect x="10" y="0" width="60" height="100" rx="10" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+    <circle cx="40" cy="85" r="5" fill="rgba(255,255,255,0.3)"/>
+    <line x1="28" y1="12" x2="52" y2="12" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Sound waves -->
+    <path d="M75,35 Q85,50 75,65" fill="none" stroke="#d69e2e" stroke-width="2" stroke-linecap="round"/>
+    <path d="M82,25 Q97,50 82,75" fill="none" stroke="#d69e2e" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  <!-- Play button -->
+  <circle cx="320" cy="180" r="32" fill="rgba(214,158,46,0.9)"/>
+  <polygon points="312,164 312,196 340,180" fill="white"/>
+  <!-- Label -->
+  <text x="320" y="290" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,system-ui,sans-serif" font-size="14" font-weight="500">The Daily Call</text>
+</svg>

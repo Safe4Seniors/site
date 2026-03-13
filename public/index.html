@@ -204,20 +204,11 @@
                 transform: scale(1) !important;
                 position: relative !important;
             }
-            .nvidia-badge-header {
-                display: none !important;
-            }
         }
 
-        /* NVIDIA Inception Badge */
+        /* NVIDIA Inception Badge — always visible */
         .nvidia-badge-header {
             opacity: 1;
-            transition: opacity 0.25s ease;
-        }
-
-        nav.scrolled .nvidia-badge-header {
-            opacity: 0;
-            pointer-events: none;
         }
     </style>
 
@@ -302,7 +293,7 @@
                 <a href="https://www.nvidia.com/en-us/startups/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="nvidia-badge-header hidden sm:block ml-6"
+                   class="nvidia-badge-header ml-6"
                    aria-label="NVIDIA Inception Member">
                     <img src="./assets/nvidia-inception-badge.png"
                          alt="NVIDIA Inception Member"
@@ -683,7 +674,7 @@
                 <!-- Key Metrics -->
                 <div class="space-y-4 fade-up fade-up-delay-1">
                     <div class="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 flex items-center gap-5">
-                        <div class="text-3xl md:text-4xl font-extrabold text-brand-blue">$1M</div>
+                        <div class="text-3xl md:text-4xl font-extrabold text-brand-blue">$3M</div>
                         <div>
                             <div class="font-bold text-gray-800">Seed Round</div>
                             <div class="text-sm text-gray-500">Raising now</div>
@@ -834,7 +825,7 @@
                         RS
                     </div>
                     <h3 class="text-xl font-bold text-gray-800">Dr. Richard Stanley</h3>
-                    <p class="text-brand-blue font-semibold mb-2">Co-Founder / CHO</p>
+                    <p class="text-brand-blue font-semibold mb-2">Co-Founder / CTO</p>
                     <p class="text-sm text-gray-500 mb-4">Alexandria, VA (DC Metro)</p>
                     <p class="text-sm text-gray-600 mb-5 leading-relaxed">
                         PhD Oxford. PATH, IntraHealth International, UNICEF — 15+ years global health across 20+ countries. Health IT standards (FHIR, HIPAA). DC federal healthcare connections (CMS, ACL, IHS).
