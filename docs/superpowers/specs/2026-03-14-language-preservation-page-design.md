@@ -108,7 +108,7 @@ A dedicated standalone page (`marketing/language-preservation.html`) presenting 
 - Directory: `marketing/assets/language-preservation/`
 - Naming convention:
   - `vocab-page-1.png`, `vocab-page-2.png`, `vocab-page-3.png`
-  - `interview-page-01.png` through `interview-page-46.png`
+  - `collection-page-01.png` through `collection-page-46.png` (DOC0114 contains interviews, stories, and vocabulary — not just one interview)
 
 ### Image Optimization
 - Compress PNGs after extraction (target ~100-200KB per page, ~5-8MB total for all 49 pages)
