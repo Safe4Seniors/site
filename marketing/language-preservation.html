@@ -542,7 +542,81 @@
 
     <!-- Collection Section -->
     <section id="collection" class="py-16 md:py-20 px-4 bg-white">
-        <div class="max-w-6xl mx-auto"><!-- Content added in Task 4 --></div>
+        <div class="max-w-6xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-12">
+                <span class="inline-block bg-brand-gold text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3">The Collection</span>
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-blue archival-serif mb-3 fade-up">Oral Histories &amp; Language Records</h2>
+                <p class="text-archival-caption max-w-2xl mx-auto archival-serif fade-up fade-up-delay-1">
+                    46 pages of interviews, traditional stories, verb conjugations, and vocabulary — typed records from the early 1970s preserving the words and memories of Nez Perce elders.
+                </p>
+            </div>
+
+            <!-- Overview Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-12 fade-up fade-up-delay-2">
+                <!-- Card 1: Della Davis Interview -->
+                <div class="bg-archival-cream rounded-xl p-6 border border-archival-tan cursor-pointer card-hover" onclick="openReader(1)">
+                    <div class="text-3xl mb-3">&#x1F399;</div>
+                    <h3 class="font-bold text-brand-blue text-sm mb-1">Della Davis Interview</h3>
+                    <p class="text-xs text-archival-caption mb-2">Pages 1 &ndash; 24</p>
+                    <p class="text-xs text-gray-600">Conversational interview about life near Spalding, Idaho &mdash; family, boarding school, churches, horses, and Talmaks camp.</p>
+                </div>
+                <!-- Card 2: Janette Wilson Interview -->
+                <div class="bg-archival-cream rounded-xl p-6 border border-archival-tan cursor-pointer card-hover" onclick="openReader(25)">
+                    <div class="text-3xl mb-3">&#x1F399;</div>
+                    <h3 class="font-bold text-brand-blue text-sm mb-1">Janette Wilson Interview</h3>
+                    <p class="text-xs text-archival-caption mb-2">Pages 25 &ndash; 27</p>
+                    <p class="text-xs text-gray-600">Growing up along the Salmon River, family history, schooling, and the old Indian ways.</p>
+                </div>
+                <!-- Card 3: Traditional Stories -->
+                <div class="bg-archival-cream rounded-xl p-6 border border-archival-tan cursor-pointer card-hover" onclick="openReader(28)">
+                    <div class="text-3xl mb-3">&#x1F4DC;</div>
+                    <h3 class="font-bold text-brand-blue text-sm mb-1">Traditional Stories</h3>
+                    <p class="text-xs text-archival-caption mb-2">Pages 28 &ndash; 34</p>
+                    <p class="text-xs text-gray-600">A tale of disobedient children by Almeda Stevens, a teaching story by Dorcas Miller, and an interview with V. Morris about boarding school.</p>
+                </div>
+                <!-- Card 4: Verb Conjugations -->
+                <div class="bg-archival-cream rounded-xl p-6 border border-archival-tan cursor-pointer card-hover" onclick="openReader(35)">
+                    <div class="text-3xl mb-3">&#x1F4D6;</div>
+                    <h3 class="font-bold text-brand-blue text-sm mb-1">Verb Conjugations</h3>
+                    <p class="text-xs text-archival-caption mb-2">Pages 35 &ndash; 41</p>
+                    <p class="text-xs text-gray-600">Anthropology 210 &mdash; Nez Perce verb forms for say, see, hear, eat, sleep, run, walk, arrive, give, be sick, build, be, and go/do.</p>
+                </div>
+                <!-- Card 5: Questions & Vocabulary -->
+                <div class="bg-archival-cream rounded-xl p-6 border border-archival-tan cursor-pointer card-hover" onclick="openReader(42)">
+                    <div class="text-3xl mb-3">&#x1F4DD;</div>
+                    <h3 class="font-bold text-brand-blue text-sm mb-1">Questions &amp; Vocabulary</h3>
+                    <p class="text-xs text-archival-caption mb-2">Pages 42 &ndash; 46</p>
+                    <p class="text-xs text-gray-600">Example questions in Nez Perce, months with cultural meanings, numbers, days of the week, seasons, and miscellaneous vocabulary.</p>
+                </div>
+            </div>
+
+            <!-- Preview Card -->
+            <div class="fade-up fade-up-delay-3">
+                <div class="document-viewer">
+                    <div class="scan-panel">
+                        <img src="./assets/language-preservation/collection-page-01.png" alt="Collection page 1 — Della Davis interview opening">
+                    </div>
+                    <div class="transcription-panel">
+                        <div class="topic-heading">A Conversational Interview with Della Davis of Spalding</div>
+                        <p class="mt-3"><strong>M</strong> (Marcus Arthur) = interviewer</p>
+                        <p><strong>D</strong> (Della Davis) = interviewee</p>
+                        <p class="mt-3"><strong>M</strong> &ndash; Aunt Elizabeth was your good friend wasn't she?</p>
+                        <p><strong>D</strong> &ndash; Yes&mdash;we grew up together.</p>
+                        <p><strong>M</strong> &ndash; Is that so?</p>
+                        <p><strong>D</strong> &ndash; Yes.</p>
+                        <p><strong>M</strong> &ndash; You must be around 90 years old.</p>
+                        <p><strong>D</strong> &ndash; Yes, I am 90 years old now, she was 91. She was a year older than I.</p>
+                        <p class="mt-4 text-sm text-archival-caption italic">Transcription continues for 24 pages&hellip;</p>
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <button onclick="openReader(1)" class="inline-flex items-center gap-2 bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-blue-light transition-colors">
+                        Read Full Collection <span aria-hidden="true">&rarr;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Mission Connection Section -->
@@ -551,8 +625,1268 @@
     </section>
 
     <!-- Full-Screen Reader Modal -->
-    <div id="reader-modal" class="modal-overlay">
-        <!-- Content added in Task 4 -->
+    <div id="reader-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span id="reader-title" class="text-sm font-medium">Page 1 of 46</span>
+                <button onclick="closeReader()" class="text-white hover:text-brand-gold text-2xl leading-none" aria-label="Close reader">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="scan-panel" id="reader-scan"></div>
+                <div class="transcription-panel" id="reader-transcription"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="reader-prev" onclick="readerNav(-1)" class="modal-nav-btn">&larr; Previous</button>
+                <span id="reader-page-indicator" class="text-sm text-gray-600">Page 1 of 46</span>
+                <button id="reader-next" onclick="readerNav(1)" class="modal-nav-btn">Next &rarr;</button>
+            </div>
+        </div>
+
+        <!-- Hidden container with all 46 pages -->
+        <div id="reader-pages" style="display:none;">
+
+<!-- PAGE 1 -->
+<div id="reader-page-1" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-01.png" alt="Collection page 1" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">A Conversational Interview with Della Davis of Spalding</div>
+<p>(Marcus Arthur) M = will be interviewer</p>
+<p>(Della Davis) D = will be interviewee</p>
+<p><strong>M</strong> &ndash; Aunt Elizabeth was your good friend wasn't she?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;we grew up together.</p>
+<p><strong>M</strong> &ndash; Is that so?</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; You must be around 90 years old.</p>
+<p><strong>D</strong> &ndash; Yes, I am 90 years old now, she was 91. She was a year older than I.</p>
+<p><strong>M</strong> &ndash; How did you grow up? What was your background and where?</p>
+<p><strong>D</strong> &ndash; Up this canyon a ways and up on the hill; where the old house still sits (Martin Seth place). My mother and father lived there and that's where I grew up.</p>
+<p><strong>M</strong> &ndash; A moment. (Interruption and explaining to others about a state project for Indian use. This interview.)</p>
+<p><strong>D</strong> &ndash; There was a school first here.</p>
+<p><strong>M</strong> &ndash; Here in Spalding?</p>
+<p><strong>D</strong> &ndash; Yes, just above here.</p>
+<p><strong>M</strong> &ndash; I know where it is. I went there also.</p>
+<p><strong>D</strong> &ndash; Yes, that's where they enrolled me. They just came and got me. I was seven (7) years old. My father used to meet me every day. And then we would ride double on horseback, back home. On Saturdays too.</p>
+<p><strong>M</strong> &ndash; Yes. Yes.</p>
+<p><strong>D</strong> &ndash; I used to think it was a long way to go to school. And then I came to church. The one that's standing here now, Spalding.</p>
+<p><strong>M</strong> &ndash; (Tried to interrupt).</p>
+<p><strong>D</strong> &ndash; I was baptized by Archie Lawyer (Early preacher-Indian).</p>
+<p><strong>M</strong> &ndash; I've heard of him.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;he baptized me. She was from here, my mother.</p>
+</div>
+</div>
+
+<!-- PAGE 2 -->
+<div id="reader-page-2" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-02.png" alt="Collection page 2" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; What was her name?</p>
+<p><strong>D</strong> &ndash; Julia. Or not Julia&mdash;that was my sister-in-law.</p>
+<p><strong>M</strong> &ndash; That was her Indian name? Do you remember?</p>
+<p><strong>D</strong> &ndash; <span class="nez-perce">"Eex-Na-Mee-poo."</span> I had a paper here somewhere with all names and things, but I've misplaced it. But it was <span class="nez-perce">"Eex-Na-nee-poo."</span></p>
+<p><strong>M</strong> &ndash; <span class="nez-perce">"Eex-Na-Mee-poo"</span>?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;that means that she was from the coast someplace.</p>
+<p><strong>M</strong> &ndash; What was your father's Indian name?</p>
+<p><strong>D</strong> &ndash; <span class="nez-perce">"Ee-yoh-kahsin-hih-hih."</span></p>
+<p><strong>M</strong> &ndash; <span class="nez-perce">"Ee-yoh-kahsin-hih-hih-hih"</span>?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;that was a written small club. White. So it could be a small white tomahawk. That was where he got his name, <span class="nez-perce">"Ee-yoh-kahsin-hih-hih-hih"</span>.</p>
+<p><strong>M</strong> &ndash; <span class="nez-perce">"Ee-yoh-kahsin-hih-hih"</span>, that's a good name.</p>
+<p><strong>D</strong> &ndash; I was just looking at that paper I had, and I had all the names and things written down.</p>
+<p style="margin-left:2em;">My mother's and father's names.</p>
+<p><strong>D</strong> &ndash; I guess they named us for the agency. These people from up the canyon. (from where the water flows)</p>
+<p><strong>M</strong> &ndash; This must have been a beautiful part of the country.</p>
+<p><strong>D</strong> &ndash; Yes, lots of trees. And not many roads.</p>
+<p><strong>M</strong> &ndash; Trees everywhere.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;and travel was all by horseback, horseback and by wagon&mdash;we used to come to church.</p>
+<p><strong>M</strong> &ndash; You must have been small when my paternal grandfather was christianized and became an ordainedminister more? (Presbyterian)</p>
+<p><strong>D</strong> &ndash; Yes&mdash;his house, the manse, was across the creek and on the hill, there.</p>
+<p><strong>M</strong> &ndash; I was very small when he was preaching here.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;you were small. They lived across, over there.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;I remember.</p>
+<p><strong>D</strong> &ndash; That was some time ago. Who were you young ones then?</p>
+<p><strong>M</strong> &ndash; My older brother, Josh. His name was "hoh-lo-", no&mdash;that was my name. Oh&mdash;</p>
+</div>
+</div>
+
+<!-- PAGE 3 -->
+<div id="reader-page-3" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-03.png" alt="Collection page 3" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>D</strong> &ndash; There were some of you that used to play over there.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;there were three of us. And just across the creek here, closer, there was another family. A boy named (Elk) <span class="nez-perce">"Wah-wuok-yah,"</span> and his older brother. They lived close just across the creek.</p>
+<p><strong>D</strong> &ndash; Yes, their house was closer to the creek.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;they had a small house.</p>
+<p><strong>D</strong> &ndash; Yes it was very small.</p>
+<p><strong>M</strong> &ndash; Elk and someone else, I can't think of his name.</p>
+<p><strong>D</strong> &ndash; I can't think of his name either. He was from Kamiah. I keep forgetting.</p>
+<p><strong>M</strong> &ndash; Me too. We're reminiscing and that's good.</p>
+<p><strong>D</strong> &ndash; And is this machine recording my voice?</p>
+<p><strong>M</strong> &ndash; It sure is&mdash;you'll get a chance to listen later.</p>
+<p><strong>D</strong> &ndash; I may be saying things wrong.</p>
+<p><strong>M</strong> &ndash; I don't think so.</p>
+<p><strong>D</strong> &ndash; What shall we talk about now?</p>
+<p><strong>M</strong> &ndash; What did you do when you were small? You went to school here didn't you?</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; And what were you to Martin Seth? Did you live near his old place?</p>
+<p><strong>D</strong> &ndash; Yes, I lived in the same place, as that's where our mother and father lived. And he was my full brother. There was three of us. James Seth&mdash;he died when he was very small.</p>
+<p><strong>M</strong> &ndash; He must have been very young.</p>
+<p><strong>D</strong> &ndash; It's as though just two of us grew up. (Martin Seth and her). And he was always afraid to see me go anyplace. He was always crying. And he was just a very small boy, yet always crying. And so the folks had to let him tag along. He never attended school at all. He would just play and play. And I was totally stupid or unschooled. There was a student who went to school there named Cline Tina Fogarty. I don't think you would remember the name. You weren't born yet.</p>
+<p><strong>M</strong> &ndash; No&mdash;I don't think I was born yet. But the name sounds familiar.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;the teacher used to make us write at the blackboard. But I didn't know enough to</p>
+</div>
+</div>
+
+<!-- PAGE 4 -->
+<div id="reader-page-4" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-04.png" alt="Collection page 4" loading="lazy"></div>
+<div class="reader-page-text">
+<p>write anything but this person was beside me, and I would watch all the writing that was done with real know-how. And he would tell and show me how to do the work at the blackboard. That's how I used to do and how untutored I was.</p>
+<p><strong>M</strong> &ndash; But we all start out not knowing anything.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;I wish I could find the paper I had. I had names and things to remind me of lots of things.</p>
+<p><strong>M</strong> &ndash; It's good that we are reminiscing. My grandfather was a preacher here. Where were you at that time?</p>
+<p><strong>D</strong> &ndash; I was grown up by that time. I was married to Clara's father and we lived on Webb ridge. That was quite a way from here. And that was how far your grandfather used to travel to hold services for our family.</p>
+<p><strong>M</strong> &ndash; There were no catholic services there, they were from here weren't they?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;they were from here. Your grandfather used to be the one. What was his name, I've forgotten.</p>
+<p><strong>M</strong> &ndash; His name was Mark.</p>
+<p><strong>D</strong> &ndash; Yes, Mark.</p>
+<p><strong>M</strong> &ndash; <span class="nez-perce">"Hoh-pope"</span> was his name too.</p>
+<p><strong>D</strong> &ndash; <span class="nez-perce">"Hoh-pope"</span> yes.</p>
+<p><strong>M</strong> &ndash; That's the one.</p>
+<p><strong>D</strong> &ndash; That's the soup or sauce.</p>
+<p><strong>M</strong> &ndash; That was his nickname when he was a child.</p>
+<p><strong>D</strong> &ndash; Yes. <span class="nez-perce">"Hoh-pope."</span></p>
+<p><strong>M</strong> &ndash; He must have been very dark when he was little.</p>
+<p><strong>D</strong> &ndash; Yes. And he was ambitious and eager to please. He went all the way to Webb ridge many times to hold religious services. That's how handy he was&mdash;always going to his parishoners homes to hold services.</p>
+<p><strong>M</strong> &ndash; Well, I guess that's how times were then. People going to church and all. Not like it is now.</p>
+<p><strong>D</strong> &ndash; No, it's entirely different. The old church used to be made of rough lumber. A small</p>
+</div>
+</div>
+
+<!-- PAGE 5 -->
+<div id="reader-page-5" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-05.png" alt="Collection page 5" loading="lazy"></div>
+<div class="reader-page-text">
+<p>church. Now they have a good or well built church and there aren't many going to it. Sometimes only about 3 or 4. They are all lazy or something. And then, there was only horse travel.</p>
+<p><strong>M</strong> &ndash; People used to come on horseback or buggy from all over&mdash;even Cottonwood Creek.</p>
+<p><strong>D</strong> &ndash; There was only horse travel then. And when there was communion on a Sunday, the people really came for that. They (The parishioners) would come from all over. The whole church grounds would blossom out in white teepees.</p>
+<p><strong>M</strong> &ndash; Do you remember when they had two meat markets here in Spalding?</p>
+<p><strong>D</strong> &ndash; Yes, I do. They were both close and handy.</p>
+<p><strong>M</strong> &ndash; I remember hearing about them when I was little.</p>
+<p><strong>D</strong> &ndash; My father used to ride down from home on horseback to get fresh meat. There used to be lots of meat and it was still very cheap.</p>
+<p><strong>M</strong> &ndash; True.</p>
+<p><strong>D</strong> &ndash; He used to bring home lots of meat tied to his saddle. We used to go to Lewiston on horses. I used to be very happy on those trips.</p>
+<p><strong>M</strong> &ndash; People are happy now days, but in a different way.</p>
+<p><strong>D</strong> &ndash; Yes that's true. They run the cars too much. People don't come to church.</p>
+<p><strong>M</strong> &ndash; I guess that's what people are coming to.</p>
+<p><strong>D</strong> &ndash; Yes that's true. And the church grounds are going to weeds.</p>
+<p><strong>M</strong> &ndash; What was your father's name again?</p>
+<p><strong>D</strong> &ndash; White man's name or Indian. It was <span class="nez-perce">"Ee-yoh-kahsin-hih-hih."</span></p>
+<p><strong>M</strong> &ndash; <span class="nez-perce">"Ee-yoh-kahsin-hih-hih."</span></p>
+<p><strong>D</strong> &ndash; Yes. I wish I could find that paper I had. It was all written out plainly. I think they named him <span class="nez-perce">"Ee-yoh-kahsin-hih-hih"</span> from the agency. The Indian agent used to be near here near the bridge that goes toward the park. The agent asked my father what his name was in English. He told them that he only had an Indian name, no English name. So they gave him a name. There was some kind of worker there at the agency by the name of Seth. And that's who they named him after. So that became our last name. Like Martin Seth, and that was my last name too.</p>
+</div>
+</div>
+
+<!-- PAGE 6 -->
+<div id="reader-page-6" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-06.png" alt="Collection page 6" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; When did Watson first come here?</p>
+<p><strong>D</strong> &ndash; He came here later. That's the one who started a meat market here isn't it.</p>
+<p><strong>M</strong> &ndash; Yes, I think that's the one.</p>
+<p><strong>D</strong> &ndash; Yes that was later that Watson came around.</p>
+<p style="margin-left:2em;">(Loud noise)</p>
+<p style="margin-left:2em;">What was that?</p>
+<p><strong>M</strong> &ndash; Probably just the wind.</p>
+<p><strong>D</strong> &ndash; Watson was a more recent arrival. I don't know what year. It's good that you are getting this recording. And all this time I have never given a thought to those old days.</p>
+<p>Watson had quite a number of articles in his store. Lots of dress materials.</p>
+<p><strong>M</strong> &ndash; Do you remember the dry goods peddlers? <span class="nez-perce">"Its-ah-pee-nikt."</span></p>
+<p><strong>D</strong> &ndash; Oh yes. They used to walk as far as our place, these <span class="nez-perce">"Its-ah-pee-nikt."</span> They used to pack lots of things with them</p>
+<p><strong>M</strong> &ndash; Dress goods?</p>
+<p><strong>D</strong> &ndash; Oh yes. Then they would unpack their goods for display, usually a lot, and we would buy various articles for our use.</p>
+<p><strong>M</strong> &ndash; Did you have much money in those days?</p>
+<p><strong>D</strong> &ndash; No we never had very much money at all.</p>
+<p>My father must have been pretty smart. He grew cherry trees, and apples, raspberries, strawberries and they had their own gardens. Growing potatoes, corn, watermelons.</p>
+<p><strong>M</strong> &ndash; Almost anything you wanted or needed.</p>
+<p><strong>D</strong> &ndash; Yes. And he used to sell the cherries. Lots of people came around to buy. He sold the cherries for about 3&cent;/pound. Now days they cost so much more. But they made a little money. Even with low prices they managed to save some money.</p>
+<p><strong>M</strong> &ndash; How many horses did they have?</p>
+<p><strong>D</strong> &ndash; Horses no. A few.</p>
+<p><strong>M</strong> &ndash; Cattle?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;But not beef cattle. We had a few cows for milk.</p>
+</div>
+</div>
+
+<!-- PAGE 7 -->
+<div id="reader-page-7" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-07.png" alt="Collection page 7" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; Milk cows then?</p>
+<p><strong>D</strong> &ndash; Yes. Milk cows. And besides milk, we made butter and cottage cheese. My mother made butter and cheese. And as for horses, we had a large pasture. The horses used to gallop to the water trough. I really can't remember how many horses there were.</p>
+<p><strong>M</strong> &ndash; You must have lived quite comfortably.</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; It should be like that now.</p>
+<p><strong>D</strong> &ndash; That's right. And we had chickens too. They used to lay quite well, so we had eggs. We seldom had to buy very much. Maybe flour, sugar, coffee.</p>
+<p><strong>M</strong> &ndash; And tobacco?</p>
+<p><strong>D</strong> &ndash; Tobacco?&mdash;my father never used any tobacco.</p>
+<p><strong>M</strong> &ndash; How about pigs?</p>
+<p><strong>D</strong> &ndash; My father had a pigpen, but I don't know how many. He kept quite a few. We used to slaughter once in a while.</p>
+<p>There was a fairly large garden, and the hens laid eggs.</p>
+<p><strong>M</strong> &ndash; It should be like that now.</p>
+<p><strong>D</strong> &ndash; Oh yes. Now you have to buy every little thing. Eggs&mdash;we go up almost to Culdesac to get them. At that poultry farm, they have good, fresh eggs there.</p>
+<p><strong>M</strong> &ndash; Ahh. Do you know? I envy you. You have a good memory and good memories. I am too young to have that kind of experiences that you have had.</p>
+<p><strong>D</strong> &ndash; Yes you are too young. It wasn't too long ago that you kids were just small boys. And I went to school here in Spalding. Then this school was closed. They sent us to boarding school in Lapwai. And I didn't know how to comb my own hair as I was just over 7 years old. And it was then that I met your aunt Elizabeth. She told the matron that she would take care of me. So from then on, she was my caretaker. And we became close friends. We used to take horses to school, from my home. And we went horseback riding every now and then. Up in the school pasture-land. So we became very dear friends, and Elizabeth and I. Your mother was just a small child at that time.</p>
+<p><strong>M</strong> &ndash; Yes, I guess she would have been pretty small. She was the youngest in the family.</p>
+</div>
+</div>
+
+<!-- PAGE 8 -->
+<div id="reader-page-8" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-08.png" alt="Collection page 8" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>D</strong> &ndash; Yes, she was the youngest. Your aunt was the oldest, your aunt Mary.</p>
+<p><strong>M</strong> &ndash; Yes, Aunt Mary was very beautiful.</p>
+<p><strong>D</strong> &ndash; Indeed she was. If we had time I would look for some picture I have.</p>
+<p><strong>M</strong> &ndash; We have some too.</p>
+<p><strong>D</strong> &ndash; I have pictures of Mary and Elizabeth.</p>
+<p><strong>M</strong> &ndash; And how about Ben?</p>
+<p><strong>D</strong> &ndash; And Ben too. Ben Penney. I was thinking of them this morning.</p>
+<p><strong>M</strong> &ndash; He was a handsome lad in his time.</p>
+<p><strong>D</strong> &ndash; We used to be neighbors at Talmaks. From where they used to camp, I had my small teepee toward where the white visitors used to be housed. That's where I had my teepee. Not far from where the Penney's used to camp.</p>
+<p><strong>D</strong> &ndash; Later&mdash;Sam Watters told me there was a small cabin I could use. Then I wouldn't have to bother with tent poles. I could move in even during a rain storm. So now I have a cabin at Talmaks.</p>
+<p><strong>M</strong> &ndash; I'll have to visit you sometime.</p>
+<p><strong>D</strong> &ndash; Yes, its near where Walter Moffett camps.</p>
+<p><strong>M</strong> &ndash; My grandfather used to camp near the Moffett campsite.</p>
+<p><strong>D</strong> &ndash; The road goes toward the church. That's where my cabin is located.</p>
+<p><strong>M</strong> &ndash; Do you remember where the first Spring used to be?</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; Then it must be very close to there. Just a little above it.</p>
+<p><strong>D</strong> &ndash; Yes, that's the place. When the camp meetings started there, Lawrence Tilden's mother and I used to move up there on buggys. In the horse and buggy days. They camped a little way from our camp. I can't recall who their neighbors were. I used to like to get water. I probably spilled water as I was carrying it. But I liked to go to the spring for water. The young men used to accompany me to get water, and that was what made it a happy occasion. I was rather smart that way, being a school tutored character.</p>
+<p><strong>M</strong> &ndash; Those must have been happy times.</p>
+<p><strong>D</strong> &ndash; Oh yes. Now days they have the water piped to various places on the campground. The</p>
+</div>
+</div>
+
+<!-- PAGE 9 -->
+<div id="reader-page-9" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-09.png" alt="Collection page 9" loading="lazy"></div>
+<div class="reader-page-text">
+<p>faucets are close to the cabins.</p>
+<p><strong>M</strong> &ndash; Do you remember when they had the camp criers?</p>
+<p><strong>D</strong> &ndash; Oh yes. The criers always brought the camp news.</p>
+<p><strong>M</strong> &ndash; Morning and evening.</p>
+<p><strong>D</strong> &ndash; Especially in the mornings.</p>
+<p><strong>M</strong> &ndash; Evenings too. He would tell the people to get ready and come to church.</p>
+<p><strong>D</strong> &ndash; That was really good. He would make the rounds of the camp, calling to the people.</p>
+<p><strong>M</strong> &ndash; It should be like those old times again. It was so happy and care-free.</p>
+<p><strong>D</strong> &ndash; It was lately I was up there. Last Sunday, I think. The gates were all locked. We went through a narrow place and walked to where the church tent is placed. The campground is still overgrown. No one has mowed the hay or cleaned the place yet. I don't know who the maintenance people are for that.</p>
+<p><strong>M</strong> &ndash; I don't have any idea who the caretakers are.</p>
+<p><strong>D</strong> &ndash; Oh yes, the caretakers.</p>
+<p><strong>M</strong> &ndash; Don't you often think back and sort of wish for those good old days?</p>
+<p><strong>D</strong> &ndash; Oh yes indeed.</p>
+<p><strong>M</strong> &ndash; There were no roads, highways, only the trains to travel on.</p>
+<p><strong>D</strong> &ndash; That's right. There were no highways. Only horse travel, and small wagon roads. And boats. The Indians had canoes to cross the river.</p>
+<p><strong>M</strong> &ndash; And they used to have horses across the river too.</p>
+<p><strong>D</strong> &ndash; Oh yes. They used to have quite a few horses grazing on the other side. And cattle too. The Indians owned lots of horses and cattle too.</p>
+<p>We had lots of pasture land, and we still have quite a bit. Mrs. Roy White and I own quite a bit of property together. She is my niece.</p>
+<p><strong>M</strong> &ndash; Oh yes&mdash;that would be Celestime.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;we own property together as her father and I used to be alone. And she has inherited her father's holdings. Even as far away as Pendelton. From my mother's side there is property that we own jointly. And she is with me in this ownership.</p>
+<p><strong>M</strong> &ndash; Say that's nice. To own property. Its good that you own things jointly, only don't</p>
+</div>
+</div>
+
+<!-- PAGE 10 -->
+<div id="reader-page-10" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-10.png" alt="Collection page 10" loading="lazy"></div>
+<div class="reader-page-text">
+<p>either of you quarrel over anything?</p>
+<p><strong>D</strong> &ndash; That's right. My niece is very dear to me. So that makes it nice. She has 3 children.</p>
+<p><strong>M</strong> &ndash; We are all Indians. They are all the same</p>
+<p><strong>D</strong> &ndash; Yes, indeed.</p>
+<p>I was thinking of something this morning. I can't quite recall.</p>
+<p>I was dreaming of some of the dear ones who have passed away. And then I woke up.</p>
+<p><strong>M</strong> &ndash; Even if you cry it seems like it's all in vain, doesn't it?</p>
+<p><strong>D</strong> &ndash; Yes that's the way it seems.</p>
+<p>One of my grandchildren went to Nespelem. And another, Harlan came this morning. A big brother to the one that's here.</p>
+<p><strong>M</strong> &ndash; Yes, I know your grandchildren.</p>
+<p><strong>D</strong> &ndash; Harlan works somewhere in Spokane.</p>
+<p><strong>M</strong> &ndash; It's nice that you have your grandchildren. You are not alone.</p>
+<p><strong>D</strong> &ndash; Yes. Harlan has some daughters. Three of them.</p>
+<p><strong>M</strong> &ndash; Does he have children?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;only daughters. And he gets tired of them. And there is still one bachelor alone.</p>
+<p><strong>M</strong> &ndash; Just for a while.</p>
+<p><strong>D</strong> &ndash; Just for a while.</p>
+<p>He goes to where they play stick games. Wherever that is. "I'm going up stick game" he says. Then he gets back in the morning. The younger one here has children.</p>
+<p><strong>M</strong> &ndash; Oh yes. It's been a year or more since I saw him last.</p>
+<p><strong>D</strong> &ndash; Oh yes. They were gone for a while and got back today. The others will be back later. What day is this? Friday?</p>
+<p><strong>M</strong> &ndash; Yes this is the fifth day (Friday).</p>
+<p><strong>D</strong> &ndash; I guess they should be back Sunday as they work on Monday. They are traveling someplace.</p>
+<p><strong>M</strong> &ndash; Probably getting into mischief.</p>
+<p><strong>D</strong> &ndash; That's so. He and his wife are together. His wife is from around here. Maybe you know her parents.</p>
+</div>
+</div>
+
+<!-- PAGE 11 -->
+<div id="reader-page-11" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-11.png" alt="Collection page 11" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; Yes, I think I do. Her father is Jack Smith isn't it?</p>
+<p><strong>D</strong> &ndash; Yes. She is Jack Smith's daughter.</p>
+<p>Her paternal grandmother is Jane. Do you ever see her? She is older than I am. She lives up on the hill, their old place.</p>
+<p><strong>M</strong> &ndash; No. I'm afraid I don't know her. Who, exactly, is she?</p>
+<p><strong>D</strong> &ndash; Jack Smith's mother.</p>
+<p><strong>M</strong> &ndash; Oh yes: its been so long since I've seen her.</p>
+<p><strong>D</strong> &ndash; She is older than I am.</p>
+<p><strong>M</strong> &ndash; Is that so?</p>
+<p><strong>D</strong> &ndash; Yes. She still lives on the old place. I don't know which of her children is taking care of her. She has lots of children.</p>
+<p>Jack Smith is easy to place. One of <span class="nez-perce">"Tha-yeh-niht"</span>'s children. Do you know her? Lydia.</p>
+<p><strong>M</strong> &ndash; Oh yes, from way back.</p>
+<p><strong>D</strong> &ndash; Oh yes. He used to be Lydia's brother. Either older or younger.</p>
+<p><strong>M</strong> &ndash; Younger, I believe.</p>
+<p><strong>D</strong> &ndash; Oh yes. Lydia. That is one of the forebears.</p>
+<p>(Someone enters). (Della asks him) Were you sweating?</p>
+<p>(Answer) No.</p>
+<p>(To me) They go sweat bathing most of the time, almost everyday.</p>
+<p><strong>M</strong> &ndash; Maybe he's getting ready for a morning bath.</p>
+<p><strong>D</strong> &ndash; Oh yes.</p>
+<p>I don't remember that one. (Pointing to the picture). He was related to my father. I don't know whether he was older or younger. They were not closely related. But related the way the older Indians used to call each other kin.</p>
+<p>That was Joseph.</p>
+<p><strong>M</strong> &ndash; Oh yes.</p>
+<p><strong>D</strong> &ndash; I don't recall having seen him very much. I don't know when he died.</p>
+</div>
+</div>
+
+<!-- PAGE 12 -->
+<div id="reader-page-12" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-12.png" alt="Collection page 12" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; I think it was 1904.</p>
+<p><strong>D</strong> &ndash; 1904?</p>
+<p><strong>M</strong> &ndash; Yes, in Nespelem.</p>
+<p><strong>D</strong> &ndash; In 1904. That's about the time I was going to school here. I went to school here for two years. Then I went to Lapwai next. They put us to school in one place. There were lots of children going to school there. I don't know where they all went to. They are all dead.</p>
+<p><strong>M</strong> &ndash; Yes, they are all gone. Lots of people have gone.</p>
+<p>My grandfather had two children from his first wife and they died as children. He married the widow of a man from around the first church in Kamiah.</p>
+<p><strong>D</strong> &ndash; Your paternal grandfather?</p>
+<p><strong>M</strong> &ndash; Yes. They died and were buried up in Lapwai. That was a long time ago, and their graves are lost. It seems a shame that many graves are lost. We are being beaten that way.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;there are only a few of us left.</p>
+<p>Just lately, I was traveling up toward Lapwai and Sweetwater way. And there are very few houses where there were houses and houses of Indian families. There are nothing but white people living there now.</p>
+<p><strong>M</strong> &ndash; Its the same way up the river toward Stites. There were only two people I saw there last time I was there. Dorcas and &mdash;</p>
+<p><strong>D</strong> &ndash; Almeda.</p>
+<p><strong>M</strong> &ndash; Almeda&mdash;yes. And hardly anyone else. There was Gene Ellenwood. What's his Indian name? And that's about all the old-times there are.</p>
+<p><strong>D</strong> &ndash; Yes. We went to Talmaks and on to Grangeville. And then on down.</p>
+<p><strong>M</strong> &ndash; You mean to the South Fork?</p>
+<p><strong>D</strong> &ndash; No. We stopped at Grangeville to dig some roots. We dug some <span class="nez-perce">"couse"</span> (roots). And I have some drying outside.</p>
+<p>We came back from Grangeville through there.</p>
+<p><strong>M</strong> &ndash; The South Fork.</p>
+<p><strong>D</strong> &ndash; Yes. On the way down the river we looked at the old places where the people used to live, and there was no one living there anymore.</p>
+</div>
+</div>
+
+<!-- PAGE 13 -->
+<div id="reader-page-13" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-13.png" alt="Collection page 13" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; There just are no more old folks.</p>
+<p><strong>D</strong> &ndash; And then we finally got home. There were no old ones left. I made that trip with Mrs. Youngman. Do you know her?</p>
+<p><strong>M</strong> &ndash; Yes&mdash;I know who you mean.</p>
+<p>Do you remember the days when old time Indians used to live across the river all along the railroad track clear up to Stites?</p>
+<p><strong>D</strong> &ndash; Oh yes. I distinctly remember. Because I used to go to the church meetings on the train. All the way up to Stites. That was the upper terminus. The greeters from the church used to be waiting to assign us to various homes as visitors during the church meetings (Evangelestic). I used to go to most of the church meetings. Up at Meadow Creek, I took the train there to. And also Ahsahka. And now there are no more trains.</p>
+<p><strong>M</strong> &ndash; Do you remember Elias J. Pund?</p>
+<p><strong>D</strong> &ndash; Oh yes.</p>
+<p><strong>M</strong> &ndash; He was a short man. When I was very young I used to think he was always dressed neatly, he always wore a clean shirt. He was a small man with a large wife. He may have been mean.</p>
+<p><strong>D</strong> &ndash; He may have been mean. I can't recall.</p>
+<p><strong>M</strong> &ndash; Do you remember Jones Watters?</p>
+<p><strong>D</strong> &ndash; Jones Watters?</p>
+<p><strong>M</strong> &ndash; Yes. You must have known him.</p>
+<p><strong>D</strong> &ndash; Oh yes. His wife was my aunt. They lived in Julieatta</p>
+<p><strong>M</strong> &ndash; They lived on the other side of the church.</p>
+<p><strong>D</strong> &ndash; Yes. The lived in one of the oldest houses here. Its gone now.</p>
+<p><strong>M</strong> &ndash; And Charlie Jackson's house. His wife was Hattie.</p>
+<p><strong>D</strong> &ndash; Oh yes. Where the old sweat house used to be, their house was just on this side. Yes that's where Charlie Jackson's house used to be.</p>
+<p><strong>M</strong> &ndash; And there were lots of barns that I remember.</p>
+<p><strong>D</strong> &ndash; Yes. They kept quite a few horses here. And there were lots of houses. They</p>
+</div>
+</div>
+
+<!-- PAGE 14 -->
+<div id="reader-page-14" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-14.png" alt="Collection page 14" loading="lazy"></div>
+<div class="reader-page-text">
+<p>circled the church.</p>
+<p><strong>M</strong> &ndash; And there were lots of chickens around the barns.</p>
+<p><strong>D</strong> &ndash; Yes. I think Sam W. keeps a few around even yet. I'm sure he has some. You people had quite a few at your grandfathers place too. You were very small then, your brother and your sister.</p>
+<p><strong>M</strong> &ndash; There were no turkeys around here in them days.</p>
+<p><strong>D</strong> &ndash; That was good land where the manse was. Above the road, up to the corner. There is a man living up there now. He must have a road going up to his place.</p>
+<p><strong>M</strong> &ndash; Yes, there's a road up there now.</p>
+<p><strong>D</strong> &ndash; I'll bet he doesn't have to pay much for the road. But if it was one of us, we would have to pay a lot for the road.</p>
+<p><strong>M</strong> &ndash; I wonder how they planned to build way up there. It must be pretty expensive. And that's where we are beaten. We don't pay the way others do.</p>
+<p><strong>D</strong> &ndash; That's for sure. That property should belong to the church. I don't pretend to know how the land was acquired.</p>
+<p>And this machine is still recording our voices?</p>
+<p><strong>M</strong> &ndash; Oh sure. Its recording fine.</p>
+<p><strong>D</strong> &ndash; I may be talking nonsense.</p>
+<p><strong>M</strong> &ndash; No we are enjoying our conversation and the machine is working.</p>
+<p><strong>D</strong> &ndash; I used to enjoy talking with my brother, your father. And also my little sister was your mother.</p>
+<p><strong>M</strong> &ndash; Mother and father were married for 51 years.</p>
+<p><strong>D</strong> &ndash; Yes. And as I recall, your grandfather Mark Arthur was a very fine minister.</p>
+<p><strong>M</strong> &ndash; He was one of the best men I have ever known.</p>
+<p>Do you remember Jim Cash Cash?</p>
+<p><strong>D</strong> &ndash; Yes. I remember him.</p>
+<p><strong>M</strong> &ndash; You probably remember the old people who used to come to Spalding during the Evangelestic services.</p>
+<p>I was pretty small, but I remember a few: Johnny Frank, Indian Name <span class="nez-perce">"Tussk-note"</span>, his</p>
+</div>
+</div>
+
+<!-- PAGE 15 -->
+<div id="reader-page-15" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-15.png" alt="Collection page 15" loading="lazy"></div>
+<div class="reader-page-text">
+<p>father (Red Arrow)</p>
+<p><strong>D</strong> &ndash; Yes. I remember seeing Red Arrow, his father.</p>
+<p><strong>M</strong> &ndash; Also Peter Gould.</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; I never knew his Indian name.</p>
+<p><strong>D</strong> &ndash; I never knew it either. But my father was from Kamiah, and so I had lots of relatives from there.</p>
+<p>(A truck horn blows.)</p>
+<p>Is someone coming to get you now?</p>
+<p>"Is that the one?" No its the paper truck.</p>
+<p>Where was I now?</p>
+<p><strong>M</strong> &ndash; You were talking about your relations from Kamiah.</p>
+<p><strong>D</strong> &ndash; Yes. My father had lots of folks from Kamiah. His wife, my mother, was from the Salmon river country, her father was from there.</p>
+<p><strong>M</strong> &ndash; Whitesand Clan?</p>
+<p><strong>D</strong> &ndash; Yes. On my mother's side. But her maternal grandmother was from Yakima. A full-blooded Yakima.</p>
+<p>Later they tried to get me to claim land in Yakima through the relationship. But she had been declared a NezPerce.</p>
+<p><strong>M</strong> &ndash; I was trying to remember what part of the Salmon river country your father was from. But I can't recall the names of the places over there. Must be old age&mdash;this forgetting.</p>
+<p><strong>D</strong> &ndash; I have an excuse. I'm over 90 years old.</p>
+<p><strong>M</strong> &ndash; Do you know how old Janet Wilson is?</p>
+<p><strong>D</strong> &ndash; She is much older than I am. If I could find that paper I had. I even had her birthdate written there. She is older than I am.</p>
+<p><strong>M</strong> &ndash; You remember Sol Webb don't you?</p>
+<p><strong>D</strong> &ndash; Yes, he was my older cousin. We were neighbors on Webb Ridge, his father lived there.</p>
+<p><strong>M</strong> &ndash; What are you looking for?</p>
+<p style="text-align:center;">&mdash;End of tape&mdash;</p>
+</div>
+</div>
+
+<!-- PAGE 16 -->
+<div id="reader-page-16" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-16.png" alt="Collection page 16" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Interview w/Della Davis</div>
+<p style="text-align:center;">Reverse side of reel</p>
+<p style="text-align:center;">(Talking about Hattie Cones)</p>
+<p><strong>D</strong> &ndash; She must be 96. She had a birthday in June. Some people told me she was 100 years old. But here it says she is 96. There were many people at her birthday celebration I understand.</p>
+<p><strong>M</strong> &ndash; Who was the first Indian agent here? Do you remember Stranahan?</p>
+<p><strong>D</strong> &ndash; Who?</p>
+<p><strong>M</strong> &ndash; Stranahan.</p>
+<p><strong>D</strong> &ndash; Yes. I remember the name but I can't recall the face.</p>
+<p><strong>M</strong> &ndash; As I heard, he was a tall man.</p>
+<p><strong>D</strong> &ndash; Yes, I guess he was.</p>
+<p>My father used to call him <span class="nez-perce">"Italahan"</span>. He mispronounced the name.</p>
+<p><strong>M</strong> &ndash; Who else used to be around?</p>
+<p>I can't remember anymore old names.</p>
+<p><strong>D</strong> &ndash; They asked my father what his name was. And he told them that he never had an English name.</p>
+<p>So they named him Seth.</p>
+<p><strong>M</strong> &ndash; Who was the oldest? You or Martin?</p>
+<p><strong>D</strong> &ndash; What?</p>
+<p><strong>M</strong> &ndash; Who was the oldest? You or Martin.</p>
+<p><strong>D</strong> &ndash; I was. I was three years older than he was. I was the oldest child. The youngest was James Seth. He died when he was an infant or not much older. So there were just two of us who grew up.</p>
+<p>And now he has died before me. So that leaves me by myself.</p>
+<p>I get the feeling that this will be my last year.</p>
+<p><strong>M</strong> &ndash; Just get the idea that you are valuable and hang on to life. What would I do without you around. I'd probably be crying for some time.</p>
+<p><strong>D</strong> &ndash; That's right&mdash;probably cry everywhere.</p>
+</div>
+</div>
+
+<!-- PAGE 17 -->
+<div id="reader-page-17" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-17.png" alt="Collection page 17" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; That's right&mdash;cry all the time and be lonesome.</p>
+<p><strong>D</strong> &ndash; Do you know&mdash;we were very dear friends&mdash;Elizabeth and I. I nearly became ill when she passed away. I layed around, not feeling well, for a long time.</p>
+<p><strong>M</strong> &ndash; You two must have been very mean to survive so long.</p>
+<p><strong>D</strong> &ndash; I guess so. She was the one who was smart. We were kind of different in a way. We were fond of the old Indian ways.</p>
+<p>Like, one fourth of July there was a celebration around here. There were lots of tents in a huge circle. Lots of Indians. Your maternal grandmother had a tent here also. Because I used to visit with them a lot. At their teepee. We used to go to the serenade sings. Do you know what that is?</p>
+<p><strong>M</strong> &ndash; Of course. I've heard of them.</p>
+<p><strong>D</strong> &ndash; We used to join these sings. We would trail them way in the back.</p>
+<p><strong>M</strong> &ndash; You must have been little kids in those days.</p>
+<p><strong>D</strong> &ndash; We sang along with them. You may have heard of one called "Matilda". What was her name?</p>
+<p><strong>M</strong> &ndash; Was it "big woman"? I guess not.</p>
+<p><strong>D</strong> &ndash; Here name was Raboin. I can't recall her married name. Anyhow, she would dress in men's clothes. Hat and coat. She was our protector. She didn't want the boys to gather round us. So she would be in our midst. This made-up man. So we would be singing these serenade songs. Oh there were lots of people. And the war dances. We would stay back and yet try to get near the drum. Elizabeth and I. I don't know what we expected to do. But we tried to sing along with the war dance songs. We were just mischievous I guess.</p>
+<p><strong>M</strong> &ndash; Maybe you grew up that way.</p>
+<p><strong>D</strong> &ndash; That may be so.</p>
+<p><strong>M</strong> &ndash; But now you are honest aren't you?</p>
+<p><strong>D</strong> &ndash; Just a little bit. These days I'm only a spectator. Whenever there is some kind of Indian gathering, that's the place I want to go.</p>
+<p><strong>M</strong> &ndash; That a happy situation. These days that's all play, this celebration stuff.</p>
+<p><strong>D</strong> &ndash; Yes. And they don't know how it used to be. They have forgotten.</p>
+</div>
+</div>
+
+<!-- PAGE 18 -->
+<div id="reader-page-18" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-18.png" alt="Collection page 18" loading="lazy"></div>
+<div class="reader-page-text">
+<p>What a shame. I lost that paper. And I saw the birthdate of Janet's (Wilson). There is just nine there. From Spalding. I saw it in that church news. And Janet's was there too. My age was on there too.</p>
+<p><strong>M</strong> &ndash; Oh! Here is her name. It says she is 93 years old.</p>
+<p><strong>D</strong> &ndash; That's how old she says she is?</p>
+<p><strong>M</strong> &ndash; Yes.</p>
+<p><strong>D</strong> &ndash; And I always thought her to be at least five years older than me.</p>
+<p><strong>M</strong> &ndash; I guess not.</p>
+<p><strong>D</strong> &ndash; And that's all she is. And I just became 90 years old last April.</p>
+<p><strong>M</strong> &ndash; You were here when the bakery was here weren't you? It was about half a block from here.</p>
+<p><strong>D</strong> &ndash; Yes. It was very near here.</p>
+<p><strong>M</strong> &ndash; And there was the Post Office with the dance hall on the second floor. That was for white people.</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; And there was a hotel down across the railroad tracks. This was really a large settlement.</p>
+<p><strong>D</strong> &ndash; It was a very good town. There was food of all kinds. You could get almost any food that you wanted to. Now it is all gone. Whenever you want anything you have to go to Lewiston.</p>
+<p><strong>M</strong> &ndash; You remember Ros Brodell?</p>
+<p><strong>D</strong> &ndash; Oh yes&mdash;he was an elder at the church. His house was down the road a ways. I can't think who lives there now. But the White used to live there.</p>
+<p><strong>M</strong> &ndash; Oh yes that's the place. And who used to run the ferry. How do you say that in Indian. (She tells me the Indian word for ferry.)</p>
+<p><strong>D</strong> &ndash; You mean the ferry? I can't remember the man's name.</p>
+<p><strong>M</strong> &ndash; Yes that's the word. And the man's first name was Frank.</p>
+<p><strong>D</strong> &ndash; I can't remember that Frank. I can't even remember.</p>
+<p><strong>M</strong> &ndash; How about Frank Gooding?</p>
+<p><strong>D</strong> &ndash; Could be. And we were forever crossing the river on the ferry too.</p>
+</div>
+</div>
+
+<!-- PAGE 19 -->
+<div id="reader-page-19" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-19.png" alt="Collection page 19" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>M</strong> &ndash; And there was a bell to call the ferry to your side of the river.</p>
+<p><strong>D</strong> &ndash; Yes. And I can't remember the name.</p>
+<p><strong>M</strong> &ndash; I wish you could remember. It seems like the man's name was Frank Gooding.</p>
+<p><strong>D</strong> &ndash; Could be.</p>
+<p>And did Janet Wilson have a clear mind and memory.</p>
+<p><strong>M</strong> &ndash; No. Not too well. She was always saying that she was getting old.</p>
+<p><strong>D</strong> &ndash; Both of us are getting old. We are old women now.</p>
+<p><strong>M</strong> &ndash; But I envy you older people you have had better bringing up it seems. Not like the younger generations.</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; I envy you people. I would like to be over a hundred.</p>
+<p><strong>D</strong> &ndash; Yes. Like some of these older ones, who are they? I can't even think of one.</p>
+<p><strong>M</strong> &ndash; Oh yes it would be nice to be old.</p>
+<p><strong>D</strong> &ndash; (Speaking of a toddler walking around the room). Look at that one walking around with no cares. The little one comes from the Warm Springs reservation. The young ones leave it around while they go to someplace for pop.</p>
+<p><strong>M</strong> &ndash; They go to eat.</p>
+<p><strong>D</strong> &ndash; Could be. And here I am getting around with a cane. I can't walk around like that. I always have to look for my cane.</p>
+<p><strong>M</strong> &ndash; I remember when I was younger&mdash;they used to refer to these little children as "little old man". Like this little girl they would call her "little old woman." The old people were something else, they had no pity for each other.</p>
+<p><strong>D</strong> &ndash; I see in the paper here, Mr. David Penney, and their son Sam. I wonder where they come from.</p>
+<p><strong>M</strong> &ndash; From the Sioux, I think.</p>
+<p><strong>D</strong> &ndash; Yes. From South Dakota.</p>
+<p><strong>M</strong> &ndash; I wouldn't know where that was.</p>
+<p>It looks like it might rain.</p>
+<p><strong>D</strong> &ndash; That's for sure. Do you realize its already almost June? It will soon be summer. We</p>
+</div>
+</div>
+
+<!-- PAGE 20 -->
+<div id="reader-page-20" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-20.png" alt="Collection page 20" loading="lazy"></div>
+<div class="reader-page-text">
+<p>are going to get too hot pretty soon now.</p>
+<p><strong>M</strong> &ndash; That's true.</p>
+<p><strong>D</strong> &ndash; I like to have Sam Watters tell stories.</p>
+<p><strong>M</strong> &ndash; Its been three years since I heard him tell stories. Mostly about the coyote. I've heard about three or four stories from him.</p>
+<p><strong>D</strong> &ndash; He's younger than I. He tells stories much better than I.</p>
+<p><strong>M</strong> &ndash; I remember when he got married to Ed Conner's daughter.</p>
+<p><strong>D</strong> &ndash; Oh yes&mdash;what was her name.</p>
+<p><strong>M</strong> &ndash; Blanche.</p>
+<p><strong>D</strong> &ndash; Oh yes they got married where. Was it at Talmaks?</p>
+<p><strong>M</strong> &ndash; I can't quite recall, but wasn't it here.</p>
+<p><strong>D</strong> &ndash; It could have been.</p>
+<p><strong>M</strong> &ndash; I think it was here. Wasn't her father the Methodist preacher at Lapwai?</p>
+<p><strong>D</strong> &ndash; Her father?</p>
+<p><strong>M</strong> &ndash; Yes&mdash;he was Edward J. Conner.</p>
+<p><strong>D</strong> &ndash; Yes.</p>
+<p><strong>M</strong> &ndash; He was the preacher at the Methodist church.</p>
+<p><strong>D</strong> &ndash; Yes that's right he used to preach there. I used to know Blanche. I saw her name in the paper.</p>
+<p><strong>M</strong> &ndash; She was a good looking girl when she was young. And Sam was a handsome young man too.</p>
+<p><strong>D</strong> &ndash; Yes&mdash;not like he is now&mdash;he's big and fat.</p>
+<p><strong>M</strong> &ndash; Only his belly.</p>
+<p>And Alex Williams was here about that time too. And Alex Broncheau. Do you remember him?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;they used to live right near here.</p>
+<p><strong>M</strong> &ndash; That's right&mdash;they lived at Red Duck's house.</p>
+<p><strong>D</strong> &ndash; Yes at Red Duck's. Mrs. Red Duck was his paternal grandmother.</p>
+<p><strong>M</strong> &ndash; That's right&mdash;her name was Sophie.</p>
+<p><strong>D</strong> &ndash; Yes that was Sophie.</p>
+<p>When I was widowed my children were small. Sam Tilden had a house here. He told us to</p>
+</div>
+</div>
+
+<!-- PAGE 21 -->
+<div id="reader-page-21" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-21.png" alt="Collection page 21" loading="lazy"></div>
+<div class="reader-page-text">
+<p>move into it so the children could go to school. So we stayed there and the children went to school. Sophie and her family lived next door.</p>
+<p><strong>M</strong> &ndash; And John Kane lived in the next house didn't he?</p>
+<p><strong>D</strong> &ndash; Yes&mdash;John Kane.</p>
+<p><strong>M</strong> &ndash; From Cap Kane.</p>
+<p><strong>D</strong> &ndash; Yes, from Cap Kane. And then from there there's one who inherited the house.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;that's Sylvester.</p>
+<p>Yes that's him. He batches there. I don't know why he should be alone.</p>
+<p><strong>M</strong> &ndash; Maybe he's too mean.</p>
+<p><strong>D</strong> &ndash; Could be. I don't know him. And on the other side is Sam.</p>
+<p><strong>M</strong> &ndash; And he's alone too.</p>
+<p><strong>D</strong> &ndash; He's alone. I don't know where his children are. His daughter Tammy came around and I didn't know who it was.</p>
+<p>I guess she has gone to stay with her mother. She stays with Blanche.</p>
+<p><strong>M</strong> &ndash; I wonder in which direction we are all going. That's life. Things are all good in the old days. Now we seem to have lost our directions.</p>
+<p><strong>D</strong> &ndash; I lost my program from Talmaks.</p>
+<p><strong>M</strong> &ndash; Yes I received one in the mail also.</p>
+<p><strong>D</strong> &ndash; Then you know what's going to happen. And its overgrown up there. Worse than the grass down here. That's how the camp ground is up there.</p>
+<p><strong>M</strong> &ndash; Do you remember when they had nothing but teepees? The only wooden buildings were at Miss Crawford's. They housed the visitors. Mostly white people.</p>
+<p><strong>D</strong> &ndash; Now they have lots of cabins. I used to take a teepee and camp there.</p>
+<p><strong>M</strong> &ndash; That's how we used to do.</p>
+<p><strong>D</strong> &ndash; We had lots of boys come and stay.</p>
+<p>I can't think of much more to talk about. Ask some questions if you wish.</p>
+<p>This right here is my little land. Small property. This small house and that shed.</p>
+<p><strong>M</strong> &ndash; But you are comfortable here.</p>
+</div>
+</div>
+
+<!-- PAGE 22 -->
+<div id="reader-page-22" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-22.png" alt="Collection page 22" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>D</strong> &ndash; That's true. I had a white renter by the name of Grass.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;I know that family.</p>
+<p><strong>D</strong> &ndash; He moved to Kooskia.</p>
+<p><strong>M</strong> &ndash; He moved to just below Pete Nicodemus.</p>
+<p><strong>D</strong> &ndash; Well, before he moved we made a deal. He traded me this place for some work terrace that I had. The house was very small. I had this one built here. And so this is comfort for me. The church is real close.</p>
+<p><strong>M</strong> &ndash; That makes for comfort, having the church handy.</p>
+<p><strong>D</strong> &ndash; Yes it makes a difference. I would have had to walk from way up on the hill.</p>
+<p><strong>M</strong> &ndash; But the last time you lived up there you were much younger and walking never bothered you.</p>
+<p><strong>D</strong> &ndash; And I usually rode a horse.</p>
+<p><strong>M</strong> &ndash; Well that's comfort.</p>
+<p><strong>D</strong> &ndash; One of my grandchildren wants to build a house up there. And I told him, that's good.</p>
+<p><strong>M</strong> &ndash; There's a good well up there.</p>
+<p><strong>D</strong> &ndash; The well is real good.</p>
+<p>I told him that the house is still vacant. But he says its too lonely there. It would be better to build a house.</p>
+<p>But in the winter its bad up there. The road is terrible. It's a small road.</p>
+<p><strong>M</strong> &ndash; Muddy too, I suppose.</p>
+<p><strong>D</strong> &ndash; Too slick.</p>
+<p>There's a cemetery up there. My parents decided a long time ago to have a family plot up there. My baby brother is buried there. And as the rest of the family passed away, they were buried there.</p>
+<p>I tell my family that I want to be buried down here on the church burial grounds. There are three of them that left this house, who are buried there. And I want to be buried next to them when I leave. The roads are too slick up to the old place. No way for people to make the trip comfortably.</p>
+<p><strong>M</strong> &ndash; I might have a hard time getting up to see your grave if it gets too slick.</p>
+</div>
+</div>
+
+<!-- PAGE 23 -->
+<div id="reader-page-23" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-23.png" alt="Collection page 23" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>D</strong> &ndash; That's right. And the cemetery across the creek is taken care of real well.</p>
+<p><strong>M</strong> &ndash; Yes that's true.</p>
+<p><strong>D</strong> &ndash; The state or federal people take care of it.</p>
+<p><strong>M</strong> &ndash; My father and mother are both buried over there.</p>
+<p><strong>D</strong> &ndash; Where are they buried?</p>
+<p><strong>M</strong> &ndash; Over there at the church burial ground.</p>
+<p><strong>D</strong> &ndash; On this near corner?</p>
+<p><strong>M</strong> &ndash; Yes, on this side. My grandfather has four children buried there from way back. Then there's father and mother. And recently one of my niece's infant boy was buried next to my parent's grave.</p>
+<p><strong>D</strong> &ndash; Who was that?</p>
+<p><strong>M</strong> &ndash; The surnames was Two-Hatchet. That was Josh's grandson.</p>
+<p><strong>D</strong> &ndash; So they brought the child there.</p>
+<p><strong>M</strong> &ndash; Yes.</p>
+<p><strong>D</strong> &ndash; On the far side. That's where the tombstones of our family is. Brother and sister who left this house are buried there. And their father is there. So there are three of them. And that's where I want to be placed.</p>
+<p><strong>M</strong> &ndash; Yes&mdash;you are telling the truth. You should be closer so we won't get too lonesome. Even right here and now we get lonesome for each other.</p>
+<p><strong>D</strong> &ndash; And up at the old place&mdash;no one could easily come to visit. If anyone would. The church is closer here. My spirit could visit the church.</p>
+<p><strong>M</strong> &ndash; But that's almost like haunting.</p>
+<p><strong>D</strong> &ndash; Well that's what I could do. The women at Talmaks have their organization. The leader is Josephine Dickson, then Lucille Rubule, then I'm the treasurer. I don't know who the secretary is. That's the women's organization.</p>
+<p><strong>M</strong> &ndash; Could it be Edna Thomas.</p>
+<p><strong>D</strong> &ndash; I really don't know. Could be. I had another program someplace.</p>
+<p><strong>M</strong> &ndash; Mose Thomas is about three years older than I am. Maybe a little more, but not much more.</p>
+</div>
+</div>
+
+<!-- PAGE 24 -->
+<div id="reader-page-24" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-24.png" alt="Collection page 24" loading="lazy"></div>
+<div class="reader-page-text">
+<p><strong>D</strong> &ndash; Older than you?</p>
+<p><strong>M</strong> &ndash; And his wife is not much younger. She always gives me advice. She tells me that I'm not Indian enough. So I tell her she takes herself too seriously. Life is short. Don't be mean and all that. I kid her too much I guess. I grew up with her husband and I can't understand any chieftainships. And I don't understand a woman being a chief. But&mdash;to each his own.</p>
+<p><strong>D</strong> &ndash; And Mose is the head of the Camp organization too. And his wife is up there too. She is head of something. Because I pay her for the electricity for my little cabin.</p>
+<p><strong>M</strong> &ndash; Who were the old timers down here at Spalding? I remember Jones Watters, Noah Brodell, Elias Pond, Charlie Jackson, who else?</p>
+<p><strong>D</strong> &ndash; Johnny Allen?</p>
+<p><strong>M</strong> &ndash; I don't remember him.</p>
+<p><strong>D</strong> &ndash; Johnny Allen was from Cottonwood creek, he was an elder.</p>
+<p><strong>M</strong> &ndash; That's Harlan. Maybe he'll recognize you. He's a lucky young man. His wife is Jack Smith's daughter.</p>
+<p><strong>D</strong> &ndash; Yes that's right.</p>
+<p><strong>M</strong> &ndash; Someone is coming.</p>
+<p><strong>D</strong> &ndash; They are from Lydia (<span class="nez-perce">Tah-yah-neeh</span>). Harlan is from <span class="nez-perce">Ip-men-eh Wah poh</span>. That was their maternal grandfather.</p>
+<p>(Harlan enters and we speak in English)</p>
+<p><strong>D</strong> &ndash; His wife here, you know. They are just getting back from the agency. They just registered their child or enrolled it. Then they have another child who is asleep.</p>
+<p>(Broken conversation)</p>
+<p style="text-align:center;">THE END</p>
+</div>
+</div>
+
+<!-- PAGE 25 -->
+<div id="reader-page-25" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-25.png" alt="Collection page 25" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">The Janette Wilson Interview</div>
+<p style="text-align:center;">March 25, 1973</p>
+<p style="text-align:center;">At home, near Spalding</p>
+<p>We lived up the stream from the river. That's where I grew up. That was before there were white people living around there. That's where I grew up. My father was there. He moved us from another place. We lived at a nearer place, we had a home near "Sweet water" and he moved the family to the river (Salmon). <span class="nez-perce">"Black-Tail Buck"</span> I grew up at the Salmon river area until the Indians were to receive money, three hundred dollars per capita ($300.00). Then we moved back to the Sweetwater area. That was about the time surveying was starting. (evidently, allotments.) There was an uncle of mine, a brother of my mother's. He had the place, where we had lived before, surveyed. Our family had lived there before and had planted gardens and established our home here. That place was surveyed and the land was taken away from mother. His name was "Thomas". So it came about that this uncle took the land away from his sister. So we became homeless and moved farther above this property. (Above and toward the higher ground. Webb area.)</p>
+<p>We lived there until we received the "money" (per capita). Then we moved back to the Salmon river area. We never stayed in one place very long. We wintered in the Salmon river area. (<span class="nez-perce">"black-tailed luck"</span>) We were not alone&mdash;there was always other family groups there. Many people. There was no school there. So there were many of us who didn't go to any school (government). There were some who wanted us to go to school, but my father refused to let us attend any school. He said, that the children will become sick, they are well and happy here. My father must have been kinda dumb. His name was <span class="nez-perce">"Chal"</span> (Sol) Reuben. (<span class="nez-perce">Ree-oos yohk</span>)&mdash;That's how it was. We lived up there for a time. He lived above Sweet water near what was the old Webb store. He has two relatives somewhere. I think one lives in Lewiston. The others I don't know. He may have grandchildren and others but I have no idea where they could be. I haven't seen him for a very long time. And he's an old man now, feeble-minded and old. He was raised above Sweet water and when he grew up he got married and moved to Pendleton. So he has been there a long time. He's alone now.</p>
+</div>
+</div>
+
+<!-- PAGE 26 -->
+<div id="reader-page-26" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-26.png" alt="Collection page 26" loading="lazy"></div>
+<div class="reader-page-text">
+<p>You must be over 90 years old now.</p>
+<p>Yes, I guess I'm over 90&mdash;but I don't know&mdash;I'm an old Indian and I just don't know. The old ways were good to know.</p>
+<p>Yes, oh&mdash;yes. I guess that's about all. I'm feeble-minded and I have forgotten so much.</p>
+<p>I believe you are about to have lunch.</p>
+<p>Well I guess that's about all. I can't think of any more to say. I've forgotten so much. I'm an old Lady now and can't remember or think very much. Lots of times in the past people have asked me to record some interviews. But I've turned them all down as I'm too old to remember very much.</p>
+<p>I guess I'll see you again and talk some more.</p>
+<p>My father was a soldier. A long time ago. That's why he was friendly with the white people. That was how my father was. Again&mdash;his name was Sol Reuben.</p>
+<p>Well, I guess you had better get ready for lunch.</p>
+<p>Yes. Well I guess that will be all.</p>
+<p>Question: Your husband had horses? This was misunderstood for Mother. as (horse is <span class="nez-perce">"sikum"</span>), (Mother is <span class="nez-perce">"Pika"</span>)</p>
+<p>Yes, he had a mother and father, aunts and lots of relatives. I have that daughter that lives far away. And I have two sons from a first husband. One is Willie Johnson, and Alex Johnson is the other&mdash;they live around Pendelton, Oregon. And also the daughter whose husband works far away. Her children arrived recently. There's a number of them. They will stay for a while. I don't know when they will return to their mother.</p>
+<p>There were others who wanted to interview me and record things&mdash;but I have told them that I have become feeble-minded, and I've forgotten so much. And I don't understand the English language. Only when the words are plain and simple, then I can understand a few words. I don't understand like you younger people do. You have all gone to school most of your lives and you can easily understand one another. That's how these grandchildren are. They speak nothing but English and I don't understand what they are saying. Just only a</p>
+</div>
+</div>
+
+<!-- PAGE 27 -->
+<div id="reader-page-27" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-27.png" alt="Collection page 27" loading="lazy"></div>
+<div class="reader-page-text">
+<p>few words.</p>
+<p>But I admire your knowledge of the old Indian ways.</p>
+<p>So now I'm living here alone. All of Charlie's family has passed on and I'm staying here alone. So there are just two of us left from the family. My daughter who is far away and me. Then there are the two sons from my first marriage. So I just have three children left, besides me.</p>
+<p>How old are you?</p>
+<p>I have no idea how old I am. I'm the same age as Sol Webb. Do you know him? He lives in Pendelton. He's alone now. His wife died some time ago. He's a cousin.</p>
+<p>Question: Where did you live from the place known as <span class="nez-perce">"Hay-poss"</span></p>
+<p>(meeting place&mdash;near Cottonwood?)</p>
+<p>In the first place, where I grew up, was near a lake called <span class="nez-perce">"black-tailed buck"</span>. In the Salmon river area. Then the money (allotment) was received and we became nomadic. The old home had been taken so we became nomadic. We never really had a home, like we have now so we moved from place to place. Like from Lapwai to the Wallowa country or any place that seemed appropriate to the family. You see we had our teepees, no one lived in houses then&mdash;we could move with ease at any time. That's how it was with us. I got married and this husband of mine was of the same habit. We never stayed in any one place for very long. We summered to the mountains and wintered here (Spalding), or over to the Salmon river area. But that was the general mode of life. Everyone moved with the seasons. It has just been recently that people lived in houses and stayed there. This house was Charlie Wilson's. It belonged to his father. His father's name was <span class="nez-perce">"Hey-youm-too-heeaht"</span>. This is where he died so this is my home now. My children live far away. My daughter also&mdash;These children belong to her. They come to visit me so I'm keeping them for a while. They are large now. These are my grandchildren and great-grandchildren. I have lots of heirs (branches). That's how I am. I have been alone for many years. There's my ex-husband's picture. He's passed on. He wasn't an old man when he died. He was still young, not an old man. My daughter lives very far away in Oregon. Her husband works there, far away. That's where they live.</p>
+</div>
+</div>
+
+<!-- PAGE 28 -->
+<div id="reader-page-28" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-28.png" alt="Collection page 28" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">A Short Story by Almeda Stevens</div>
+<p style="text-align:center;">A tale about disobedient children. 6-71</p>
+<p>Once there was a man and his wife in a home with two children, a boy and a girl. The woman used to dig and dig for roots for the family. The man was usually hunting. The boy and girl stayed at home. The mother came home tired one time and she asked the children to get some fresh water from the spring. But the children misbehaved and wouldn't do a thing. So the mother told them that she was going to fly away. And with that, she flew up into a tall pine tree. Then the children became frightened and said, "wait mother, we're going after some water." But it was too late. When the father came home that evening he asked the children, "where is your mother?" They told him that she flew away. Then the father told the children that he would change into a bow. So he became a bow. Then the children became real frightened and so they ran away from their place. And a grizzly bear saw them and chased them.</p>
+<p>The children asked each other whether they knew any magic. The boy didn't know of any magic but the girl knew about worms. So they turned over a rock and hid. The bear passed them by.</p>
+<p>The children kept running after that and when they were coming out of the forest they heard chopping noises. They were at the edge of a river and there was an old man making a boat. They told the old man "Grandfather, hide us. There is a grizzly bear after us." The old man told them, "I don't know you, the only ones I know are the two children whose mother flew off and whose father turned into a bow."</p>
+</div>
+</div>
+
+<!-- PAGE 29 -->
+<div id="reader-page-29" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-29.png" alt="Collection page 29" loading="lazy"></div>
+<div class="reader-page-text">
+<p>But he hid the children anyway, and the grizzly bear came running up to the old man. The bear asked the old man whether he saw a little boy and girl come by there. The old man answered, "I have already eaten them, you are not the only creature that devours little children".</p>
+<p>So the bear decided to cross the river. The old man told him to tie rocks on his braids so he would balance the boat. And he instructed a butterfly to take the bear across. In the middle where the water was deep, the butterfly tipped the boat over and the bear sank with the rocks pulling him down. And he drowned. The butterfly brought the boat.</p>
+<p>The owl flew safely to shore.</p>
+<p>That's all.</p>
+<p class="text-sm text-archival-caption italic mt-4">Note: The original typescript has handwritten corrections changing "owl" to "butterfly" in several places, and noting "butterfly brought the boat."</p>
+</div>
+</div>
+
+<!-- PAGE 30 -->
+<div id="reader-page-30" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-30.png" alt="Collection page 30" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">A Short Tale of Instruction</div>
+<p style="text-align:center;">Dorcas Miller &nbsp; 6-71</p>
+<p>I don't know very many stories, but there is always teachings and instructions that I try to give my grandchildren. I tell them, this is the way you should be. Because that is how I got my early training. My elders were always showing and telling me how to be good, and sometimes whipping me. And that is how the younger children were taught; to honor and respect your elders, both men and women. So in respect, you always found a place for the older person to sit down and gave them something to eat. That's the way to be obedient and honorable. But now the children are pitiful, disobedient, and bad in this new way of growing up. So here is a story to illustrate.</p>
+<p>Once a boy lived with his maternal grandmother, in this little story. The boy was very mean. He was always sassing his grandmother and being generally mean. In spite of his meanness, he had lots of playmates. Boys used to come and play with this boy. He got into a fight with them once and got mean with them. So the boys got together and decided to do something about it. They decided to get him lost with magic (toy-Keeks). They were going to teach him a lesson. So they led him from that place and took the Toy-Keeks from him. I don't know the nature of toy-keeks. That's a story from the elders. Anyhow, as the boys were on their way, they would spit on a willow and the boy would get lost and wonder where the others had run away to. Then from one place they would call to him, "Ho." And then from another place they would call "HO." The boys kept going farther away and placing the willows in various places. These treated willows would be instructed to keep calling "HO" to the boy. So they led the mean boy a long way off, over a number of mountains. The boys</p>
+</div>
+</div>
+
+<!-- PAGE 31 -->
+<div id="reader-page-31" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-31.png" alt="Collection page 31" loading="lazy"></div>
+<div class="reader-page-text">
+<p>kept placing the treated willows on the way. And the farther they got they called more and more. "Come on, we're over here." And the boy kept following after them. They were a long way into the mountains. When they were very far gone into the wilderness, the boys abandoned the boy. They were teaching the mean boy a lesson. They would let him be devoured by any wild beast.</p>
+<p>That's how living is now. You learn a lesson. That was the way the old people taught lessons, through stories. I only know a little of the old stories. That's all I know. This is the reason I try to teach my grandchildren. Don't be mean or ornery. This is the way the old people taught lessons. They got rid of the mean people, sometimes even by killing. These days the bad people are put to death in jails. Or sent to prisons for a long time. This is only a short story that I'm telling you to show how things were.</p>
+</div>
+</div>
+
+<!-- PAGE 32 -->
+<div id="reader-page-32" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-32.png" alt="Collection page 32" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Interview with V. Morris</div>
+<p>When I was six years old I was very "dumb" (unlearned). I never knew anything about the English language. The teacher we had was always giving us a bad time (scoldings), all of us small children were scolded for speaking in our native tongue, we were told to speak only English. But we never knew a thing about the English language. When we got caught talking in our language, we were told not do do that, that we would have our mouths washed with soap. Then we would be crying. Crying for ourselves for that reason. Then in time we learned to speak English, but it was hard because there were only Indian children at school. Some of the older children knew a little of the English language, they spoke some of the English language. But the smaller ones were very dumb. We had never heard of this new and foreign tongue. And that was how our schooling began here at school at Lapwai.</p>
+<p>And also when we were at school, the teacher told me to go home. Go to your dormitory where your bed is, and wash your face. Your face is too red. But I had never used any rouge, my face was always reddish or tended to become reddish at times. The teacher thought that I was using rouge. So I would go to the dorm and wash and clean my face. The more I washed the redder my cheeks became. That's how we grew up here at school. And the old children were always getting the better of the smaller ones. We used to come to the town of Lapwai to do some shopping. We would walk from the school in groups. We would buy a few small things, we must have got a small bit of change. So the matron would give us our small amount of money. We would buy our things. We thought we were buying a large amount of things for five cents, mostly candy. And then we would be taking these from each other and eating. And the same way, if someone brought us apples or oranges, the larger children would take it all. We</p>
+</div>
+</div>
+
+<!-- PAGE 33 -->
+<div id="reader-page-33" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-33.png" alt="Collection page 33" loading="lazy"></div>
+<div class="reader-page-text">
+<p>wouldn't get anything to eat. But we would eat what was left. Like apple cores and orange peelings. Then there were times when the older children never knew we had oranges or apples. There was a large porch under which we hid and ate our fruit. We ate all the orange because we never understood that the peeling was not to eat. So we ate all that was palatable. That's what we used to do at school when there were lots of us in school in Lapwai. And the older girls would comb and braid the hair of the smaller girls. They would fix our hair severely or with vigor. And then we would be sitting around all combed and clean. We used to be envious of the older girls when they would play with their dolls. Toward our envy they would tell us that we could have dolls when we grew older. We could make our own dolls when we got old enough. But it never became that way. When they took us home one time I told my mother they have beautiful dolls at school. I wish you would make me a doll or two to take to school. So she would make us some dolls, but we would play too hard with them and their heads would be off before we were ready to go to school. They's how things were when we went to school here. I often wish I could grow up again. I could make dolls and make them beautiful the way I know now. Now when I'm old I think of the things I can do and the things I could have done. But there was no way to help myself, to improvise. They sent us here to school, and we stayed nine months, we were home only three months and then they sent us back to school. That's how I lived. There were lots of us, I wasn't alone. There are quite a few of us left from those times. I could name them. There really aren't too many left though. Lots of them are gone. Many times my friends and I get together and reminisce. Those things we used to do. The ones who are gone, the things they used to do. These things I am telling about myself.</p>
+</div>
+</div>
+
+<!-- PAGE 34 -->
+<div id="reader-page-34" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-34.png" alt="Collection page 34" loading="lazy"></div>
+<div class="reader-page-text">
+<p>There were times when the trees and orchards were ripe, like apples or plums, we would go and steal or pick the fruit and eat. Sometimes we would get caught and be punished for it. They would make us stand in the corner of the room and sometimes they would whip us. I remember once when we were small there was a girl, now dead, Amelia Spalding, who was always home-sick. She was always going to her home and her father and mother. They would bring her back (to school). Soon we would see her going. She would be going down the sidewalk on her way home, running away. These are the things we remember. These are the things the kids used to do, lots of us. We would run away and be brought back, still, wherever they found us. Then there were times when we would go and eat sunflowers (stems). We would go on the hill for them whenever the white people would ask us whether we wanted to go and pick flowers. So we'd pick flowers and find sunflowers on the small ridges above the school. We would eat the sunflowers and run from one group of sunflowers to another. We would be picking the best ones to eat. So we would be like grazing, or eating the most succulent sunflowers. That's how we grew up here in Lapwai.</p>
+</div>
+</div>
+
+<!-- PAGE 35 -->
+<div id="reader-page-35" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-35.png" alt="Collection page 35" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Anthropology 210 &mdash; The Nez Perce Language</div>
+<p>The Conjugation of a few common verbs.</p>
+<p><strong>To say &ndash; <span class="nez-perce">hitm</span></strong></p>
+<p>I say &mdash; <span class="nez-perce">een hit-sah</span></p>
+<p>You say &mdash; <span class="nez-perce">eem ah hit-sah</span></p>
+<p>He says &mdash; <span class="nez-perce">eepih he hit-sah</span></p>
+<p>We say &mdash; <span class="nez-perce">noon he-taseek</span></p>
+<p>They say &mdash; <span class="nez-perce">eemah he-taseek</span></p>
+<p>I have said &mdash; <span class="nez-perce">een hit-eeh</span></p>
+<p>You have said &mdash; <span class="nez-perce">eem ah hie-eeh</span></p>
+<p>He has said &mdash; <span class="nez-perce">eepih he hit-eeh</span></p>
+<p>We have said &mdash; <span class="nez-perce">moo pa hit-eeh</span></p>
+<p>They have said &mdash; <span class="nez-perce">eemah he ah hit-eeh</span></p>
+<p>I will say &mdash; <span class="nez-perce">een hit-noo</span></p>
+<p>You will say &mdash; <span class="nez-perce">eem ah hit-noo</span></p>
+<p>He will say &mdash; <span class="nez-perce">eepih hie-noo</span></p>
+<p>We will say &mdash; <span class="nez-perce">noon pe-noo</span></p>
+<p>They will say &mdash; <span class="nez-perce">eemah he pa-noo</span></p>
+
+<p><strong>To see &ndash; <span class="nez-perce">hak-ikt</span></strong></p>
+<p>I see &mdash; <span class="nez-perce">een ah-iitsah</span></p>
+<p>You see &mdash; <span class="nez-perce">eem ah ah-iitsah</span></p>
+<p>He sees &mdash; <span class="nez-perce">eepih he-iitsah</span></p>
+<p>We see &mdash; <span class="nez-perce">noon ah-iiseek</span></p>
+<p>They see &mdash; <span class="nez-perce">eemah hak-liiseek</span></p>
+<p>I saw &mdash; <span class="nez-perce">een ah hak-eeh</span></p>
+<p>You saw &mdash; <span class="nez-perce">eem ah ahakk-eeh</span></p>
+<p>He saw &mdash; <span class="nez-perce">eepih hak-iit-eeh</span></p>
+<p>We saw &mdash; <span class="nez-perce">noon ah-iiseeak</span></p>
+<p>They saw &mdash; <span class="nez-perce">eemah pahk-iiseemah</span></p>
+<p>I will see &mdash; <span class="nez-perce">een ahk-noo</span></p>
+<p>You will see &mdash; <span class="nez-perce">eem ah ahk-noo</span></p>
+<p>He will see &mdash; <span class="nez-perce">eepih pahk-noo</span></p>
+<p>We will see &mdash; <span class="nez-perce">noon ah pahk-noo</span></p>
+<p>They will see &mdash; <span class="nez-perce">eemah pahk-iis-noo</span></p>
+
+<p><strong>To hear &ndash; <span class="nez-perce">mait-taht</span></strong></p>
+<p>I hear &mdash; <span class="nez-perce">een me-tse-sah</span></p>
+<p>You hear &mdash; <span class="nez-perce">eem ah me-tse-sah</span></p>
+<p>He hears &mdash; <span class="nez-perce">eepih heem-tse-sah</span></p>
+<p>We hear &mdash; <span class="nez-perce">noon me-tse-seeahk</span></p>
+<p>They hear &mdash; <span class="nez-perce">eemah heem-tse-seemk</span></p>
+<p>I heard &mdash; <span class="nez-perce">een me-tse-yah</span></p>
+<p>You heard &mdash; <span class="nez-perce">eem ah me-tse-yah</span></p>
+</div>
+</div>
+
+<!-- PAGE 36 -->
+<div id="reader-page-36" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-36.png" alt="Collection page 36" loading="lazy"></div>
+<div class="reader-page-text">
+<p>He has heard &mdash; <span class="nez-perce">eepih heem-tse-yah</span></p>
+<p>We heard &mdash; <span class="nez-perce">noon ah pom-tse-yah</span></p>
+<p>They heard &mdash; <span class="nez-perce">eemah pom-tse-yah</span></p>
+<p>I will hear &mdash; <span class="nez-perce">een me-tse-yoo</span></p>
+<p>You will hear &mdash; <span class="nez-perce">eem ah me-tse-yoo</span></p>
+<p>He will hear &mdash; <span class="nez-perce">eepih hem-tse-yoo</span></p>
+<p>We will hear &mdash; <span class="nez-perce">noon ah pom-tse-yoo</span></p>
+<p>They will hear &mdash; <span class="nez-perce">eemah he pon-tse-yoo</span></p>
+
+<p><strong>To eat &ndash; <span class="nez-perce">he-pit</span></strong></p>
+<p>I am eating &mdash; <span class="nez-perce">een he-pisah</span></p>
+<p>You are eating &mdash; <span class="nez-perce">eem ah he-pisah</span></p>
+<p>He is eating &mdash; <span class="nez-perce">eeip hee-pisah</span></p>
+<p>We are eating &mdash; <span class="nez-perce">noon hip-seehk</span></p>
+<p>They are eating &mdash; <span class="nez-perce">eemah heep-seehk</span></p>
+<p>I ate &mdash; <span class="nez-perce">een he-pah</span></p>
+<p>You ate &mdash; <span class="nez-perce">eem ah he-pah</span></p>
+<p>He ate &mdash; <span class="nez-perce">eepih he he-pah</span></p>
+<p>We ate &mdash; <span class="nez-perce">noon pa he-pah</span></p>
+<p>They ate &mdash; <span class="nez-perce">eemah he pa he-pah</span></p>
+<p>I will eat &mdash; <span class="nez-perce">een he-poo</span></p>
+<p>You will eat &mdash; <span class="nez-perce">eem ah he-poo</span></p>
+<p>He will eat &mdash; <span class="nez-perce">eepih he-poo</span></p>
+<p>We will eat &mdash; <span class="nez-perce">noon pa-poo</span></p>
+<p>They will eat &mdash; <span class="nez-perce">eemah he pa-poo</span></p>
+
+<p><strong>To sleep &ndash; <span class="nez-perce">pim-meekt</span></strong></p>
+<p>I am sleeping &mdash; <span class="nez-perce">een pin-meek-sah</span></p>
+<p>You are sleeping &mdash; <span class="nez-perce">eem ah pin-meek-sah</span></p>
+<p>He is sleeping &mdash; <span class="nez-perce">eepih he pin-meek-sah</span></p>
+<p>We are sleeping &mdash; <span class="nez-perce">noon pin-meek-seehk</span></p>
+<p>They are sleeping &mdash; <span class="nez-perce">eemah he pin-meek-seehk</span></p>
+<p>I slept &mdash; <span class="nez-perce">een pin-meek-ah</span></p>
+<p>You slept &mdash; <span class="nez-perce">eem ah pin-meek-ah</span></p>
+<p>He slept &mdash; <span class="nez-perce">eepih he pin-meek-ah</span></p>
+<p>We slept &mdash; <span class="nez-perce">noon pa pin-meek-ah</span></p>
+<p>They slept &mdash; <span class="nez-perce">eemah he pa pin-meek-ah</span></p>
+<p>I will sleep &mdash; <span class="nez-perce">een pin-meek-oo</span></p>
+<p>You will sleep &mdash; <span class="nez-perce">eem ah pin-meek-oo</span></p>
+<p>He will sleep &mdash; <span class="nez-perce">eepih he pin-meek-oo</span></p>
+<p>We will sleep &mdash; <span class="nez-perce">noon pa pin-meek-oo</span></p>
+<p>They will sleep &mdash; <span class="nez-perce">eemah he pa pin-meek-oo</span></p>
+</div>
+</div>
+
+<!-- PAGE 37 -->
+<div id="reader-page-37" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-37.png" alt="Collection page 37" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Anthropology 211 &mdash; Nez Perce Language</div>
+<p><strong>To run &ndash; <span class="nez-perce">we-la-tay-kit</span></strong></p>
+<p>I am running &mdash; <span class="nez-perce">een we-la-taht-sa</span></p>
+<p>You are running &mdash; <span class="nez-perce">eem ah we-la-taht-sa</span></p>
+<p>He is running &mdash; <span class="nez-perce">eepih he we-la-taht-sa</span></p>
+<p>We are running &mdash; <span class="nez-perce">noon we-la-tahi-seehk</span></p>
+<p>They are running &mdash; <span class="nez-perce">eemah hee-la-tahi-seehk</span></p>
+<p>I have run &mdash; <span class="nez-perce">een we-la-taht-sa</span></p>
+<p>You ran (I ran) &mdash; <span class="nez-perce">eem ah we-la-taht-sa</span></p>
+<p>He ran &mdash; <span class="nez-perce">eepih hee-la-taht-sa</span></p>
+<p>We ran &mdash; <span class="nez-perce">noon pe-la-taht-sa</span></p>
+<p>They ran &mdash; <span class="nez-perce">eemah he pee-la-taht-sa</span></p>
+<p>I will run &mdash; <span class="nez-perce">een we-la-te-ku</span></p>
+<p>You will run &mdash; <span class="nez-perce">eem ah we-la-taht-ku</span></p>
+<p>He will run &mdash; <span class="nez-perce">eepih hee-la-taht-ku</span></p>
+<p>We will run &mdash; <span class="nez-perce">noon pee-la-taht-ku</span></p>
+<p>They will run &mdash; <span class="nez-perce">eemah he pee-la-taht-ku</span></p>
+
+<p><strong>To walk &ndash; <span class="nez-perce">ip-aht-ahkit</span></strong></p>
+<p>I am walking &mdash; <span class="nez-perce">een ip-aht-aht-sa</span></p>
+<p>You are walking &mdash; <span class="nez-perce">eem ah ip-aht-aht-sa</span></p>
+<p>He was walking &mdash; <span class="nez-perce">eepih hep-aht-aht-sa</span></p>
+<p>We are walking &mdash; <span class="nez-perce">noon ip-aht-tahi-seehk</span></p>
+<p>They are walking &mdash; <span class="nez-perce">eemah hep-aht-aht-tahi-seehk</span></p>
+<p>I walked &mdash; <span class="nez-perce">een ip-aht-ah-ta</span></p>
+<p>You walked (was ...) &mdash; <span class="nez-perce">eemah ip-aht-aht-sa</span></p>
+<p>He walked &mdash; <span class="nez-perce">eepih hep-aht-aht-sa</span></p>
+<p>We walked &mdash; <span class="nez-perce">noon pep-aht-aht-sa</span></p>
+<p>They walked &mdash; <span class="nez-perce">eemah he-pep-aht-aht-sa</span></p>
+<p>I will walk &mdash; <span class="nez-perce">een ip-aht-taht-ku</span></p>
+<p>You will walk &mdash; <span class="nez-perce">eem ah ip-aht-taht-ku</span></p>
+<p>He will walk &mdash; <span class="nez-perce">eepih hep-aht-aht-ku</span></p>
+<p>We will walk &mdash; <span class="nez-perce">noon pep-aht-taht-ku</span></p>
+<p>They will walk &mdash; <span class="nez-perce">eemah he pep-aht-taht-ko</span></p>
+
+<p><strong>To arrive &ndash; <span class="nez-perce">piee</span> (to come to)</strong></p>
+<p>I am arriving &mdash; <span class="nez-perce">een pi-taah</span></p>
+<p>You are arriving &mdash; <span class="nez-perce">eem ah pi-taah</span></p>
+<p>He is arriving &mdash; <span class="nez-perce">eepih he pi-taah</span></p>
+<p>We are arriving &mdash; <span class="nez-perce">noon pi-tseehk</span></p>
+<p>They are arriving &mdash; <span class="nez-perce">eemah he pi-tseehk</span></p>
+</div>
+</div>
+
+<!-- PAGE 38 -->
+<div id="reader-page-38" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-38.png" alt="Collection page 38" loading="lazy"></div>
+<div class="reader-page-text">
+<p>I have arrived &mdash; <span class="nez-perce">een pi-nah</span></p>
+<p>You have arrived &mdash; <span class="nez-perce">eem ah pi-nah</span></p>
+<p>He has arrived &mdash; <span class="nez-perce">eepih he pi-nah</span></p>
+<p>We have arrived &mdash; <span class="nez-perce">noon pa pi-nah</span></p>
+<p>They have arrived &mdash; <span class="nez-perce">eemah he pa pi-nah</span></p>
+<p>I will arrive &mdash; <span class="nez-perce">een pi-no</span></p>
+<p>You will arrive &mdash; <span class="nez-perce">eem ah pi-no</span></p>
+<p>He will arrive &mdash; <span class="nez-perce">eepih he pi-no</span></p>
+<p>We will arrive &mdash; <span class="nez-perce">noon pa pi-no</span></p>
+<p>They will arrive &mdash; <span class="nez-perce">eemah he pa pi-no</span></p>
+</div>
+</div>
+
+<!-- PAGE 39 -->
+<div id="reader-page-39" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-39.png" alt="Collection page 39" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Anthropology 211 &mdash; Nez Perce Language</div>
+<p><strong>To give &ndash; <span class="nez-perce">ee-nit</span></strong></p>
+<p>I give &mdash; <span class="nez-perce">een ee-nit</span></p>
+<p>You give &mdash; <span class="nez-perce">eem ah ee-nit</span></p>
+<p>He gives &mdash; <span class="nez-perce">eepih hee-tieh</span></p>
+<p>We give &mdash; <span class="nez-perce">noon ee-nit-seemk</span></p>
+<p>They give &mdash; <span class="nez-perce">eemah hie-eh-seemhk</span></p>
+
+<p style="text-decoration:underline;">Indefinite past</p>
+<p>I gave &mdash; <span class="nez-perce">een ah ee-ni-ye</span></p>
+<p>You gave &mdash; <span class="nez-perce">eem ah ee-ni-ye</span></p>
+<p>He gave &mdash; <span class="nez-perce">eepih he-ni-ye</span></p>
+<p>We gave &mdash; <span class="nez-perce">noon pe-iyq</span></p>
+<p>They gave &mdash; <span class="nez-perce">eemah he pa-ni-ye</span></p>
+
+<p style="text-decoration:underline;">Recent past</p>
+<p>I gave &mdash; <span class="nez-perce">een ee-ni-sa-ha</span></p>
+<p>You gave &mdash; <span class="nez-perce">eem ah ee-ni-sa-ha</span></p>
+<p>He gave &mdash; <span class="nez-perce">eepih hee-ni-sa-ha</span> (noo)</p>
+<p>We gave &mdash; <span class="nez-perce">noon ee-ni-pa-ha</span></p>
+<p>They gave &mdash; <span class="nez-perce">eemah eeni-sa-ha</span></p>
+
+<p>I will give &mdash; <span class="nez-perce">een ee-niy</span></p>
+<p>You will give &mdash; <span class="nez-perce">eem ah ee-niy</span></p>
+<p>He will give &mdash; <span class="nez-perce">eepih he-niy</span></p>
+<p>We will give &mdash; <span class="nez-perce">noon pa-iy</span></p>
+<p>They will give &mdash; <span class="nez-perce">eemah he pa-niy</span></p>
+
+<p><strong>Illness &ndash; <span class="nez-perce">Ko-mine</span></strong></p>
+<p>I am sick &mdash; <span class="nez-perce">een ko-mi-tsah</span></p>
+<p>You are sick &mdash; <span class="nez-perce">eem ah ko-mi-tah</span></p>
+<p>He is sick &mdash; <span class="nez-perce">eepih he ko-mi-tsah</span></p>
+<p>We are sick &mdash; <span class="nez-perce">noon ko-mi-tseehk</span></p>
+<p>They are sick &mdash; <span class="nez-perce">eemah he ko-mi-tseehk</span></p>
+
+<p style="text-decoration:underline;">Recent Past</p>
+<p>I was sick &mdash; <span class="nez-perce">een ko-mi-tsa-hah</span></p>
+<p>You were sick &mdash; <span class="nez-perce">eem ah ko-mi-tsa-[unclear]-ha</span></p>
+<p>He was sick &mdash; <span class="nez-perce">eepih he ko-mi-tsa-hah</span></p>
+<p>We were sick &mdash; <span class="nez-perce">noon ko-mi-tsa-hah</span></p>
+<p>They were sick &mdash; <span class="nez-perce">eemah he ko-mi-tsa-hah</span></p>
+
+<p style="text-decoration:underline;">Indefinite past</p>
+<p>I was sick &mdash; <span class="nez-perce">een ko-mi-nah</span></p>
+<p>You were sick &mdash; <span class="nez-perce">eem ah ko-mi-nah</span></p>
+<p>He was sick &mdash; <span class="nez-perce">eepih he ko-mi-nah</span></p>
+<p>We were sick &mdash; <span class="nez-perce">noon pa ko-mi-nah</span></p>
+<p>They were sick &mdash; <span class="nez-perce">eemah he pa ko-mi-nah</span></p>
+</div>
+</div>
+
+<!-- PAGE 40 -->
+<div id="reader-page-40" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-40.png" alt="Collection page 40" loading="lazy"></div>
+<div class="reader-page-text">
+<p>I will be sick &mdash; <span class="nez-perce">een ko-mi-no</span></p>
+<p>You will be sick &mdash; <span class="nez-perce">eem ah ko-mi-no</span></p>
+<p>He will be sick &mdash; <span class="nez-perce">eepih he ko-mi-no</span></p>
+<p>We will be sick &mdash; <span class="nez-perce">noon pa ko-mi-no</span></p>
+<p>They will be sick &mdash; <span class="nez-perce">eemah he pa ko-mi-no</span></p>
+
+<p><strong>To build or make &ndash; <span class="nez-perce">Ho-nit</span></strong></p>
+<p>I am building &mdash; <span class="nez-perce">een ha-nee-sa</span></p>
+<p>You are building &mdash; <span class="nez-perce">eem ah ha-nee-sa</span></p>
+<p>He is building &mdash; <span class="nez-perce">eepih ha-nee-sa</span></p>
+<p>We are building &mdash; <span class="nez-perce">noon ha-ni-seehk</span></p>
+<p>They are building &mdash; <span class="nez-perce">eemah he ha-ni-seehk</span></p>
+
+<p style="text-decoration:underline;">Indefinite past</p>
+<p>I made &mdash; <span class="nez-perce">een ha-ni-ya</span></p>
+<p>You made &mdash; <span class="nez-perce">eem ah ha-ni-ya</span></p>
+<p>He made &mdash; <span class="nez-perce">eepih he ha-ni-ya</span></p>
+<p>We made &mdash; <span class="nez-perce">noon (pa) pa-ni-ya</span></p>
+<p>They made &mdash; <span class="nez-perce">eemah pa ni-seeka</span></p>
+<p class="text-sm text-archival-caption italic">Note: handwritten annotation reads "would use more passing"</p>
+
+<p>I will make &mdash; <span class="nez-perce">een ha-ni-yo</span></p>
+<p>You will make &mdash; <span class="nez-perce">eem ah ha-ni-yo</span></p>
+<p>He will make &mdash; <span class="nez-perce">eepih he ha-ni-yo</span></p>
+<p>We will make &mdash; <span class="nez-perce">noon pa-ni-yo</span></p>
+<p>They will make &mdash; <span class="nez-perce">eemah he pa-ni-yo</span></p>
+</div>
+</div>
+
+<!-- PAGE 41 -->
+<div id="reader-page-41" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-41.png" alt="Collection page 41" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Anthropology 210 &mdash; The Nezperce Language</div>
+<p>The conjugation of two verbs, <span class="nez-perce">"waas"</span> (to be) and <span class="nez-perce">"koosah"</span> (to go or to do) the aid in their usage in sentence structure.</p>
+
+<p><strong>To be (<span class="nez-perce">wass</span>)</strong></p>
+<p>I am &mdash; <span class="nez-perce">een wass</span></p>
+<p>You are &mdash; <span class="nez-perce">eem ah wass</span></p>
+<p>He is &mdash; <span class="nez-perce">ee-pih he wass</span></p>
+<p>We are &mdash; <span class="nez-perce">noon wee-seehk</span></p>
+<p>They are &mdash; <span class="nez-perce">eemah hew-seehk</span></p>
+<p>I was &mdash; <span class="nez-perce">een wah-kah</span></p>
+<p>You were &mdash; <span class="nez-perce">eem ah wa-kah</span></p>
+<p>He was &mdash; <span class="nez-perce">ee-pih he wa-kah</span></p>
+<p>We were &mdash; <span class="nez-perce">noon wee-seehkah</span></p>
+<p>They were &mdash; <span class="nez-perce">ee-mah hew-seehkah</span></p>
+<p>I will be &mdash; <span class="nez-perce">een wah-koo</span></p>
+<p>You will be &mdash; <span class="nez-perce">eem ah wah-koo</span></p>
+<p>Will be &mdash; <span class="nez-perce">ee-pih he-wah-koo</span></p>
+<p>They well be &mdash; <span class="nez-perce">eemah hew -see-noo</span></p>
+<p>We will be &mdash; <span class="nez-perce">noon wee-gee-noo</span></p>
+
+<p><strong><span class="nez-perce">"Koosah"</span> (To Go or To Do)</strong></p>
+<p>I am doing &mdash; <span class="nez-perce">een koo-sah</span></p>
+<p>You are doing &mdash; <span class="nez-perce">eem ah koo-sah</span></p>
+<p>He is doing &mdash; <span class="nez-perce">eepih he koo-sah</span></p>
+<p>We are doing &mdash; <span class="nez-perce">noon koo-seehk</span></p>
+<p>They are doing &mdash; <span class="nez-perce">eemah he-koo-seehk</span></p>
+<p>I have done &mdash; <span class="nez-perce">een koo-yah</span></p>
+<p>You have done &mdash; <span class="nez-perce">eem ah koo-yah</span></p>
+<p>He has done &mdash; <span class="nez-perce">eepih he koo-yah</span></p>
+<p>We have done &mdash; <span class="nez-perce">noon pah-koo-yah</span></p>
+<p>They have done &mdash; <span class="nez-perce">eemah he-pah-koo-yah</span></p>
+<p>I will do &mdash; <span class="nez-perce">een kee-yoo</span></p>
+<p>You will do &mdash; <span class="nez-perce">eem ah kee-yoo</span></p>
+<p>He will do &mdash; <span class="nez-perce">eepih he-kyoo</span></p>
+<p>We will do &mdash; <span class="nez-perce">noon pa-kyoo</span></p>
+<p>They will do &mdash; <span class="nez-perce">eemah he-pa-kyoo</span></p>
+<p class="mt-4 text-sm text-archival-caption italic">To go and to do are both used correctly in this manner and are used in sentence structure.</p>
+</div>
+</div>
+
+<!-- PAGE 42 -->
+<div id="reader-page-42" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-42.png" alt="Collection page 42" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Examples of Questions</div>
+<p><strong>To be (<span class="nez-perce">wass</span>)</strong></p>
+<p><span class="nez-perce">ee-too eem wass?</span> &mdash; What are you?</p>
+<p><span class="nez-perce">Mah-nah eem wass?</span> &mdash; How are you?</p>
+<p><span class="nez-perce">Min-nah eem wass?</span> &mdash; Where are you?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(<span class="nez-perce">"Miphk"</span> would be incorrectly used here)</p>
+<p><span class="nez-perce">Ee-see eem wass?</span> &mdash; Who are you?</p>
+<p><span class="nez-perce">Eee-too-wah-tset eem wass?</span> &mdash; Why are you?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(For what reason are you?)</p>
+<p><span class="nez-perce">Ee-toh-wine wass eem?</span> &mdash; Why are you?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(In behalf of what are you that way?)</p>
+<p><span class="nez-perce">Min-mah-eeh was eem?</span> &mdash; How are you?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(In what manner are you that way?)</p>
+
+<p><strong>To Do or To Go (<span class="nez-perce">Koosah</span>)</strong></p>
+<p><span class="nez-perce">Ee-too eem koosah?</span> &mdash; What are you doing?</p>
+<p><span class="nez-perce">Mah-nah eem koosah?</span> &mdash; How are you doing?</p>
+<p><span class="nez-perce">Min-nah eem koosah?</span> &mdash; Where are you doing (it)?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(Ungrammatical. To be correct it would be <span class="nez-perce">Min-nah eem ah koosah?</span>)</p>
+<p><span class="nez-perce">Miphk eem koosah?</span> &mdash; Where are you going?</p>
+<p><span class="nez-perce">Ee-see</span> &ndash; Not usable</p>
+<p><span class="nez-perce">Ee-too-wah-tset eem koosah?</span> &mdash; Why are you going?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(For what reason are going)</p>
+<p><span class="nez-perce">Ee-toh-wine eem koosah?</span> &mdash; Why are you going?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(In behalf of what are you going?)</p>
+<p><span class="nez-perce">Min-mah-eeh eem koosah?</span> &mdash; How are you going?</p>
+<p class="text-sm text-archival-caption italic" style="margin-left:2em;">(In what manner are you going?)</p>
+</div>
+</div>
+
+<!-- PAGE 43 -->
+<div id="reader-page-43" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-43.png" alt="Collection page 43" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Use of "To Go" with "Where" &mdash; <span class="nez-perce">Koosah</span> / <span class="nez-perce">Miphk</span></div>
+<p>Where am I going? &mdash; <span class="nez-perce">Miphk kahk koosah</span></p>
+<p>Where did I go? &mdash; <span class="nez-perce">Miphk kahk koo-yah</span></p>
+<p>Where will I go? &mdash; <span class="nez-perce">Miphk kahk kee-yoo</span></p>
+<p>Where are you going? &mdash; <span class="nez-perce">Miphk eem koosah</span></p>
+<p>Where did you go? &mdash; <span class="nez-perce">Miphk eem koo-yah</span></p>
+<p>Where will you go? &mdash; <span class="nez-perce">Miphk eem kee-yoo</span></p>
+<p>Where is he going? &mdash; <span class="nez-perce">Miphk eepih he-koosah</span></p>
+<p>Where did he go? &mdash; <span class="nez-perce">Miphk eepih he-koo-yah</span></p>
+<p>Where will he go? &mdash; <span class="nez-perce">Miphk eepih he-kyoo</span></p>
+<p>Where are we going? &mdash; <span class="nez-perce">Miphk kanm koo-seehk</span></p>
+<p>Where did we go? &mdash; <span class="nez-perce">Miphk kanm pa-koo-yah</span></p>
+<p>Where will we go? &mdash; <span class="nez-perce">Miphk kanm pa-kyoo</span></p>
+<p>Where are they going? &mdash; <span class="nez-perce">Miphk eemah he-koo-seehk</span></p>
+<p>Where did they go? &mdash; <span class="nez-perce">Miphk eemah he-pah-koo-yah</span></p>
+<p>Where will they go? &mdash; <span class="nez-perce">Miphk eemah he-pah-kyoo</span></p>
+
+<p>In this case <span class="nez-perce">"min-nah"</span> (what place) is not used to denote "where", but is used with <span class="nez-perce">"Wass"</span> (to be) to denote "place".</p>
+
+<div class="topic-heading mt-4">Simple Sentences and Questions</div>
+<p>How are all of you? &mdash; <span class="nez-perce">Mah-nah wee-seehk?</span></p>
+<p>I am ill. &mdash; <span class="nez-perce">Ein koh-my-tsah</span></p>
+<p>I am fine (well). &mdash; <span class="nez-perce">Een wass wah-khis</span></p>
+<p>Where have you been? &mdash; <span class="nez-perce">Min-nah eem wah-kah?</span></p>
+<p>Where are we now? &mdash; <span class="nez-perce">Min-nah karm wee-seehk?</span></p>
+<p>How are we going? &mdash; <span class="nez-perce">Min-mah-eeh kanm koo-seehk?</span></p>
+<p>Who are you? &mdash; <span class="nez-perce">Ee-see wass eem?</span></p>
+<p>Where are you from? &mdash; <span class="nez-perce">Min-eehk wass eem?</span></p>
+<p>I live here, where do you live? &mdash; <span class="nez-perce">Kin-nah een taw-yah-tsah, min-nah eem taw-yah-tsah?</span></p>
+<p>This is my home. &mdash; <span class="nez-perce">Kee wass enim een-eet.</span></p>
+<p>My name is ___. &mdash; <span class="nez-perce">Enim wah-nekt wass ___</span></p>
+<p>What is your name? &mdash; <span class="nez-perce">Mah-nah wass eem-mim wha-nikt?</span></p>
+<p>I am married. &mdash; <span class="nez-perce">Een wass hom-meen (with man).</span></p>
+
+<p><strong>For Females</strong></p>
+<p>I am married. &mdash; <span class="nez-perce">Een wass ewap-neen (with wife).</span></p>
+
+<p><strong>For Males</strong></p>
+<p>I am not married. &mdash; <span class="nez-perce">Wat-too was hom-meen. or Ewap-neen</span></p>
+<p>I have eaten. &mdash; <span class="nez-perce">Een was hip-peen (with food).</span></p>
+<p>Have you eaten? &mdash; <span class="nez-perce">Waht wass hip-peen?</span></p>
+<p>Are you hungry? &mdash; <span class="nez-perce">Waht hai-yahk-tsah?</span></p>
+</div>
+</div>
+
+<!-- PAGE 44 -->
+<div id="reader-page-44" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-44.png" alt="Collection page 44" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Months</div>
+<p>January &mdash; <span class="nez-perce">Ha-lu-oosp</span></p>
+<p>February &mdash; <span class="nez-perce">Ala-tum-ahl</span></p>
+<p>March &mdash; <span class="nez-perce">La-tom-tahl</span> (bloom appear on plants)</p>
+<p>April &mdash; <span class="nez-perce">Ka-koo-tahl</span> (Edible roots appear; like ka-keet)</p>
+<p>May &mdash; <span class="nez-perce">Ooe-ahl</span> (Bread making from ground roots)</p>
+<p>June &mdash; <span class="nez-perce">Toos-te-me-ah-tahl</span> (Move to higher elevations to harvest roots)</p>
+<p style="margin-left:2em;"><span class="nez-perce">Hee-liall</span> (River rises from melting snow)</p>
+<p style="margin-left:2em;"><span class="nez-perce">ka-yet-ee</span></p>
+<p>July &mdash; <span class="nez-perce">Te-yot-ahl</span> (Mid summer)</p>
+<p>August &mdash; <span class="nez-perce">We-washa-eel-kah</span> (Salmon reaches upper spawn streams)</p>
+<p>September &mdash; <span class="nez-perce">Pa-koon-eel-rehl</span> (Fall salmon run starts)</p>
+<p>October &mdash; <span class="nez-perce">Hepe-hil</span> (Haze on pine trees rises)</p>
+<p>November &mdash; <span class="nez-perce">Sahk-lu-wahl</span> (Leaves are falling)</p>
+<p>December &mdash; <span class="nez-perce">Ha-oo-iha</span> (Elk fetus develops)</p>
+</div>
+</div>
+
+<!-- PAGE 45 -->
+<div id="reader-page-45" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-45.png" alt="Collection page 45" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Numbers (Counting by Tens)</div>
+<p>10 &mdash; <span class="nez-perce">pu timpt</span></p>
+<p>20 &mdash; <span class="nez-perce">le eptit</span></p>
+<p>30 &mdash; <span class="nez-perce">me ta uptit</span></p>
+<p>40 &mdash; <span class="nez-perce">pe laptit</span></p>
+<p>50 &mdash; <span class="nez-perce">pa kaptit</span></p>
+<p>60 &mdash; <span class="nez-perce">oy lox ah optit</span></p>
+<p>70 &mdash; <span class="nez-perce">oy naptit</span></p>
+<p>80 &mdash; <span class="nez-perce">oy mit ah optit</span></p>
+<p>90 &mdash; <span class="nez-perce">kooy tsa aptit</span></p>
+<p>100 &mdash; <span class="nez-perce">pu tap tit</span></p>
+<p>1000 &mdash; <span class="nez-perce">pot moo ses</span></p>
+
+<div class="topic-heading mt-4">Money</div>
+<p>Cents &mdash; <span class="nez-perce">kuts-i</span> (or <span class="nez-perce">ho-tsy</span>)</p>
+<p>Dollars &mdash; <span class="nez-perce">kits-oui</span></p>
+<p>$56.45 &mdash; <span class="nez-perce">pa-kaptit oui-lox-ka</span></p>
+
+<div class="topic-heading mt-4">Days of the Week (Meaning)</div>
+<p>Sunday = <span class="nez-perce">hulh pow wit</span> (holy day&mdash;day of worship)</p>
+<p>Monday = <span class="nez-perce">hulh pow win akit</span> (day after holy day)</p>
+<p>Tuesday = <span class="nez-perce">lepit ka-own</span> (2nd day)</p>
+<p>Wednesday = <span class="nez-perce">metot kah-own</span> (3rd day)</p>
+<p>Thursday = <span class="nez-perce">pe lept kah-own</span> (4th day)</p>
+<p>Friday = <span class="nez-perce">pa haht kah-own</span> (5th day)</p>
+<p>Saturday = <span class="nez-perce">hulh pow wit ashk</span> (day before holy day)</p>
+<p class="text-sm text-archival-caption italic mt-2">Note: Use <span class="nez-perce">kah-own</span> or <span class="nez-perce">ki-kin</span>. <span class="nez-perce">pa</span> = at that time = on that day</p>
+</div>
+</div>
+
+<!-- PAGE 46 -->
+<div id="reader-page-46" class="reader-page">
+<div class="reader-page-scan"><img src="./assets/language-preservation/collection-page-46.png" alt="Collection page 46" loading="lazy"></div>
+<div class="reader-page-text">
+<div class="topic-heading">Seasons</div>
+<p>Spring = <span class="nez-perce">el wah tit</span></p>
+<p>Summer = <span class="nez-perce">ti yum</span></p>
+<p>Fall = <span class="nez-perce">wah wahkp</span> (cooler)</p>
+<p>Winter = <span class="nez-perce">en nim</span> (being inside)</p>
+
+<div class="topic-heading mt-4">Miscellaneous Vocabulary</div>
+<p>First feast, eating, taste = <span class="nez-perce">ka ooy yit</span> (<span class="nez-perce">ka</span> = to eat)</p>
+<p><span class="nez-perce">vah tsoo</span> = stop (for example&mdash; stream stopped flowing)</p>
+<p><span class="nez-perce">vah tsoo</span> = STOP</p>
+<p><span class="nez-perce">te we it</span> = teach (people were taught to "always care")</p>
+<p>railroad train = <span class="nez-perce">ullah heen</span> (with fire) (<span class="nez-perce">allah</span> = fire &mdash; <span class="nez-perce">heen</span> = engine)</p>
+<p>earlier railroad train was = <span class="nez-perce">kahen kee koh toh</span> (<span class="nez-perce">kahen</span> = forearm &mdash; <span class="nez-perce">kee koh toh</span> = short)</p>
+</div>
+</div>
+
+        </div><!-- end reader-pages -->
     </div>
 
     <!-- Footer -->
@@ -689,6 +2023,72 @@
 
         // Initialize state on load
         handleScroll();
+
+        // === Modal Reader ===
+        var TOTAL_PAGES = 46;
+        var currentPage = 1;
+
+        function openReader(page) {
+            currentPage = page;
+            var modal = document.getElementById('reader-modal');
+            modal.classList.add('active');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+            requestAnimationFrame(function() {
+                requestAnimationFrame(function() { modal.classList.add('visible'); });
+            });
+            renderPage();
+        }
+
+        function closeReader() {
+            var modal = document.getElementById('reader-modal');
+            modal.classList.remove('visible');
+            modal.setAttribute('aria-hidden', 'true');
+            setTimeout(function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        function readerNav(delta) {
+            var newPage = currentPage + delta;
+            if (newPage < 1 || newPage > TOTAL_PAGES) return;
+            currentPage = newPage;
+            renderPage();
+        }
+
+        function renderPage() {
+            var source = document.getElementById('reader-page-' + currentPage);
+            var scanDest = document.getElementById('reader-scan');
+            var textDest = document.getElementById('reader-transcription');
+            scanDest.replaceChildren(source.querySelector('.reader-page-scan').cloneNode(true));
+            textDest.replaceChildren(source.querySelector('.reader-page-text').cloneNode(true));
+            scanDest.scrollTop = 0;
+            textDest.scrollTop = 0;
+            var label = 'Page ' + currentPage + ' of ' + TOTAL_PAGES;
+            document.getElementById('reader-title').textContent = label;
+            document.getElementById('reader-page-indicator').textContent = label;
+            document.getElementById('reader-prev').disabled = (currentPage === 1);
+            document.getElementById('reader-next').disabled = (currentPage === TOTAL_PAGES);
+            // Preload adjacent images
+            [currentPage - 1, currentPage + 1].forEach(function(p) {
+                if (p >= 1 && p <= TOTAL_PAGES) {
+                    var img = new Image();
+                    img.src = './assets/language-preservation/collection-page-' + String(p).padStart(2, '0') + '.png';
+                }
+            });
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('reader-modal').classList.contains('active')) return;
+            if (e.key === 'ArrowLeft') readerNav(-1);
+            if (e.key === 'ArrowRight') readerNav(1);
+            if (e.key === 'Escape') closeReader();
+        });
+
+        document.getElementById('reader-modal').addEventListener('click', function(e) {
+            if (e.target === e.currentTarget) closeReader();
+        });
     </script>
 </body>
 </html>
