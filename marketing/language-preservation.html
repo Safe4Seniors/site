@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preserving Nimíipuutímt | Safe4Seniors™</title>
+    <meta name="description" content="Safe4Seniors is helping preserve the Nimíipuutímt (Nez Perce) language — fewer than 100 fluent speakers remain. Explore vocabulary, archival documents, and our dual mission.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://safe4seniors.ai/language-preservation.html">
+    <meta property="og:title" content="Preserving Nimíipuutímt | Safe4Seniors™">
+    <meta property="og:description" content="Safe4Seniors is helping preserve the Nimíipuutímt (Nez Perce) language — fewer than 100 fluent speakers remain.">
+    <meta property="og:image" content="https://safe4seniors.ai/og-image.png">
+    <meta property="og:site_name" content="Safe4Seniors">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Preserving Nimíipuutímt | Safe4Seniors™">
+    <meta name="twitter:description" content="Safe4Seniors is helping preserve the Nimíipuutímt (Nez Perce) language — fewer than 100 fluent speakers remain.">
+    <meta name="twitter:image" content="https://safe4seniors.ai/og-image.png">
+
+    <!-- Additional SEO -->
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Nez Perce, Nimíipuutímt, language preservation, indigenous language, Safe4Seniors, AI, elder care">
+    <meta name="author" content="Safe4Seniors">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'brand-blue': '#1e3a5f',
+                        'brand-blue-light': '#2c5282',
+                        'brand-gold': '#d69e2e',
+                        'brand-green': '#38a169',
+                        'archival-cream': '#faf8f4',
+                        'archival-scan': '#fffde6',
+                        'archival-tan': '#e0d8b8',
+                        'archival-caption': '#8a7a5a',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .fade-up-delay-1 { transition-delay: 0.1s; }
+        .fade-up-delay-2 { transition-delay: 0.2s; }
+        .fade-up-delay-3 { transition-delay: 0.3s; }
+
+        /* Smooth scrolling */
+        html { scroll-behavior: smooth; }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Scroll-collapsing logo */
+        .logo-container {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo-full {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        .logo-full.hidden-logo {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+            position: absolute;
+        }
+
+        .logo-collapsed {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            position: absolute;
+        }
+
+        .logo-collapsed.visible-logo {
+            opacity: 1;
+            transform: scale(1);
+            position: relative;
+        }
+
+        /* Header shadow on scroll */
+        nav.scrolled {
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile: always show collapsed */
+        @media (max-width: 640px) {
+            .logo-full {
+                display: none !important;
+            }
+            .logo-collapsed {
+                opacity: 1 !important;
+                transform: scale(1) !important;
+                position: relative !important;
+            }
+        }
+
+        /* NVIDIA Inception Badge — always visible */
+        .nvidia-badge-header {
+            opacity: 1;
+        }
+
+        /* Archival serif utility */
+        .archival-serif {
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        /* Document viewer — CSS grid, 2 columns */
+        .document-viewer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .document-viewer {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scan panel */
+        .scan-panel {
+            background: #fffde6;
+            padding: 16px;
+        }
+        .scan-panel img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .scan-panel img:hover {
+            transform: scale(1.01);
+        }
+
+        /* Transcription panel */
+        .transcription-panel {
+            background: white;
+            padding: 32px;
+            font-family: Georgia, 'Times New Roman', serif;
+            color: #4a4a4a;
+            line-height: 1.8;
+            border-left: 3px solid #e0d8b8;
+        }
+        @media (max-width: 768px) {
+            .transcription-panel {
+                border-left: none;
+                border-top: 3px solid #e0d8b8;
+            }
+        }
+        .transcription-panel .nez-perce {
+            color: #d69e2e;
+            font-weight: 600;
+        }
+        .transcription-panel .topic-heading {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #8a7a5a;
+        }
+
+        /* Modal reader overlay */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-overlay.visible {
+            opacity: 1;
+        }
+
+        /* Modal content */
+        .modal-content {
+            background: #faf8f4;
+            width: 95vw;
+            height: 90vh;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+        .modal-overlay.visible .modal-content {
+            transform: translateY(0);
+        }
+
+        /* Modal header */
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #1e3a5f;
+            color: white;
+            padding: 12px 20px;
+        }
+
+        /* Modal body — 2 col grid */
+        .modal-body {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+        .modal-body > div {
+            overflow: auto;
+        }
+        @media (max-width: 768px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Modal footer */
+        .modal-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            background: white;
+            padding: 12px 20px;
+            border-top: 1px solid #e0d8b8;
+        }
+
+        /* Modal nav buttons */
+        .modal-nav-btn {
+            background: #1e3a5f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        .modal-nav-btn:hover {
+            background: #2c5282;
+        }
+        .modal-nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Hero gradient */
+        .gradient-hero-archival {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 50%, #1e3a5f 100%);
+        }
+    </style>
+</head>
+<body class="bg-archival-cream text-gray-800 font-sans antialiased">
+    <!-- Navigation -->
+    <nav id="main-header" class="bg-white/95 backdrop-blur-sm shadow-sm fixed w-full z-50 transition-shadow duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-4">
+            <div class="flex justify-between items-center gap-6">
+                <!-- Back to Home -->
+                <a href="./index.html" class="flex items-center gap-2 text-brand-blue hover:text-brand-blue-light font-medium transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                    <span class="hidden sm:inline">Back to Home</span>
+                </a>
+
+                <!-- Logo Container with Swap Logic -->
+                <a href="./index.html" class="logo-container relative flex items-center">
+
+                    <!-- Full Wordmark (visible by default on desktop) -->
+                    <div class="logo-full hidden sm:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" class="h-14 w-auto">
+                            <line x1="10" y1="12" x2="60" y2="12" stroke="#D4A853" stroke-width="3" stroke-linecap="round"/>
+                            <text x="10" y="45" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="bold">
+                                <tspan fill="#1E293B">Safe</tspan><tspan fill="#0D9488">4</tspan><tspan fill="#1E293B">Seniors</tspan>
+                            </text>
+                            <line x1="10" y1="52" x2="220" y2="52" stroke="#D4A853" stroke-width="2"/>
+                            <text x="10" y="72" font-family="Arial, Helvetica, sans-serif" font-size="12" fill="#64748B" letter-spacing="2">
+                                AI VOICE COMPANIONS
+                            </text>
+                            <line x1="260" y1="52" x2="310" y2="52" stroke="#D4A853" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+
+                    <!-- Collapsed Mark (shows on scroll or mobile) -->
+                    <div class="logo-collapsed">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 40" class="h-10 w-auto">
+                            <rect x="2" y="2" width="86" height="36" rx="4" ry="4"
+                                  fill="none" stroke="#D4A853" stroke-width="2.5"/>
+                            <text x="45" y="28" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="bold" text-anchor="middle">
+                                <tspan fill="#1E293B">Safe</tspan><tspan fill="#0D9488">4</tspan>
+                            </text>
+                        </svg>
+                    </div>
+
+                </a>
+
+                <!-- NVIDIA Inception Badge -->
+                <a href="https://www.nvidia.com/en-us/startups/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="nvidia-badge-header ml-6"
+                   aria-label="NVIDIA Inception Member">
+                    <img src="./assets/nvidia-inception-badge.png"
+                         alt="NVIDIA Inception Member"
+                         class="h-10 w-auto opacity-90 hover:opacity-100 transition-opacity">
+                </a>
+
+                <!-- Spacer -->
+                <div class="flex-1"></div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#vocabulary" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Vocabulary</a>
+                    <a href="#collection" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Collection</a>
+                    <a href="#mission-connection" class="text-gray-600 hover:text-brand-blue font-medium transition-colors">Our Mission</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Toggle menu">
+                    <svg id="menu-icon" class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                    <svg id="close-icon" class="w-6 h-6 text-gray-700 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden" style="max-height:0;overflow:hidden;transition:max-height 0.3s ease-out;">
+                <div class="pt-4 pb-2 space-y-2">
+                    <a href="#vocabulary" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Vocabulary</a>
+                    <a href="#collection" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Collection</a>
+                    <a href="#mission-connection" class="block px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-lg font-medium">Our Mission</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Dedication -->
+    <section class="gradient-hero-archival text-white pt-24 pb-16 md:pt-32 md:pb-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Gold Badge -->
+            <div class="fade-up inline-block mb-6">
+                <span class="inline-flex items-center gap-2 bg-brand-gold/20 text-brand-gold border border-brand-gold/30 px-4 py-2 rounded-full text-sm font-semibold tracking-wide uppercase">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                    Language Preservation
+                </span>
+            </div>
+
+            <!-- Title -->
+            <h1 class="fade-up fade-up-delay-1 text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+                Preserving Nim&iacute;ipuut&iacute;mt
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="fade-up fade-up-delay-2 text-lg md:text-xl text-blue-100 max-w-2xl mx-auto mb-8 leading-relaxed archival-serif">
+                Fewer than 100 fluent speakers remain of the Nez Perce language. Every word matters. Every elder's voice is a bridge between generations.
+            </p>
+
+            <!-- Attribution -->
+            <p class="fade-up fade-up-delay-3 text-sm text-blue-200/70 italic archival-serif">
+                With gratitude to a Nim&iacute;ipuu language keeper
+            </p>
+
+            <!-- COVID Memorial Note -->
+            <div class="fade-up fade-up-delay-3 mt-8 pt-6 border-t border-white/10">
+                <p class="text-sm text-blue-200/60 archival-serif max-w-xl mx-auto">
+                    In memory of elders lost during COVID-19 — each one a library of irreplaceable knowledge, stories, and language that can never be recovered.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vocabulary Section -->
+    <section id="vocabulary" class="py-16 md:py-20 px-4 bg-archival-cream">
+        <div class="max-w-6xl mx-auto"><!-- Content added in Task 3 --></div>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="py-16 md:py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto"><!-- Content added in Task 4 --></div>
+    </section>
+
+    <!-- Mission Connection Section -->
+    <section id="mission-connection" class="py-16 md:py-20 px-4 bg-archival-cream">
+        <div class="max-w-6xl mx-auto"><!-- Content added in Task 5 --></div>
+    </section>
+
+    <!-- Full-Screen Reader Modal -->
+    <div id="reader-modal" class="modal-overlay">
+        <!-- Content added in Task 4 -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-10 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <p class="font-bold text-white text-xl mb-1">Safe<span class="text-brand-green">4</span>Seniors<sup class="text-xs">&trade;</sup></p>
+                    <p class="text-sm">Serving seniors across Idaho, Washington, and beyond</p>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="./index.html#how-it-works" class="hover:text-white transition">How It Works</a>
+                    <a href="./index.html#partners" class="hover:text-white transition">Partners</a>
+                    <a href="./index.html#investors" class="hover:text-white transition">Investors</a>
+                    <a href="./index.html#contact" class="hover:text-white transition">Contact</a>
+                </div>
+            </div>
+
+            <!-- NVIDIA Inception Badge -->
+            <div class="border-t border-gray-800 mt-8 pt-8 pb-2 text-center">
+                <p class="text-sm text-gray-500 mb-4">Proud Member Of</p>
+                <a href="https://www.nvidia.com/en-us/startups/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-block hover:opacity-80 transition-opacity"
+                   aria-label="NVIDIA Inception Program Member">
+                    <img src="./assets/nvidia-inception-badge.png"
+                         alt="NVIDIA Inception Program Member"
+                         class="h-16 md:h-20 w-auto mx-auto">
+                </a>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-xs">
+                <p>&copy; 2026 Safe4Seniors. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.maxHeight !== '0px';
+            mobileMenu.style.maxHeight = isOpen ? '0px' : '400px';
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.style.maxHeight = '0px';
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll-collapsing logo
+        const header = document.getElementById('main-header');
+        const logoFull = document.querySelector('.logo-full');
+        const logoCollapsed = document.querySelector('.logo-collapsed');
+
+        let scrollThreshold = 50;
+        let isScrolled = false;
+
+        function handleScroll() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > scrollThreshold && !isScrolled) {
+                // Scrolled down - collapse logo
+                isScrolled = true;
+                header.classList.add('scrolled');
+                logoFull.classList.add('hidden-logo');
+                logoCollapsed.classList.add('visible-logo');
+            } else if (currentScroll <= scrollThreshold && isScrolled) {
+                // Scrolled to top - expand logo
+                isScrolled = false;
+                header.classList.remove('scrolled');
+                logoFull.classList.remove('hidden-logo');
+                logoCollapsed.classList.remove('visible-logo');
+            }
+        }
+
+        // Throttle scroll events for performance
+        let ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    handleScroll();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        });
+
+        // Initialize state on load
+        handleScroll();
+    </script>
+</body>
+</html>
